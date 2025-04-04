@@ -1,0 +1,602 @@
+[
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Prone vanish. They leave the system with a rate of 5.87. Healed are born.",
+            "output": "```\nProne ->  @ 5.87;\n -> Healed @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Male Turtle and female Turtle reproduce. Additionally, distressed Wolf perishes at a rate of 4.8. Turtle, distressed Wolf, and diseased Bear are born. Predation between distressed Wolf and diseased Bear results in a single distressed Wolf at a rate of 3.71.",
+            "output": "```\nTurtle_male + Turtle_female -> Turtle_male + Turtle_pup + Turtle_female @ k0;\nWolf_distressed ->  @ 4.8;\n -> Turtle @ k1;\n -> Wolf_distressed @ k2;\n -> Bear_diseased @ k3;\nWolf_distressed + Bear_diseased -> Wolf_distressed @ 3.71;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased Fox migrates into the system of interest. Furthermore, the population of Turtle decays. Turtle and diseased Fox emerge in the system.",
+            "output": "```\n -> Fox_diseased @ k0;\nTurtle ->  @ k1;\n -> Turtle @ k2;\n -> Fox_diseased @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Stressed Turtle and stressed Bear emerge in the system. Stressed Bear and stressed Turtle leave the system.",
+            "output": "```\n -> Turtle_stressed @ k0;\n -> Bear_stressed @ k1;\nBear_stressed ->  @ k2;\nTurtle_stressed ->  @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Nonimmune, Susceptible, and Infected emerge. Infected cases develop to a Susceptible state at a rate of 2.04. Susceptible, Infected, and Nonimmune emerge.",
+            "output": "```\n -> Nonimmune @ k0;\n -> Susceptible @ k1;\n -> Infected @ k2;\nInfected -> Susceptible @ 2.04;\n -> Susceptible @ k3;\n -> Infected @ k4;\n -> Nonimmune @ k5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. HYP2 emerges in the reaction medium with a rate of 3.82. GPM1 and HYP2 are generated at a rate of 2.22 from GPM1. Additionally, FBA1 and HYP2 are created from nothing. A reaction occurs from GPM1 to RPS24B, RPP2B, and HYP2 at a rate of 2.84.",
+            "output": "```\n -> HYP2 @ 3.82;\nGPM1 -> GPM1 + HYP2 @ 2.22;\n -> FBA1 @ k0;\n -> HYP2 @ k1;\nGPM1 -> RPS24B + RPP2B + HYP2 @ 2.84;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Opa1, RPP2B, and cATP are eradicated. CATP emerges. RPP2B is the final form of a chain reaction starting from Opa1 over the intermediates cATP.",
+            "output": "```\nOpa1 ->  @ k0;\nRPP2B ->  @ k1;\ncATP ->  @ k2;\n -> cATP @ k3;\nOpa1 -> cATP @ k4;\ncATP -> RPP2B @ k5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. A Ailing individual progresses to the Contagious state. Contagious, Healed, and Ailing individuals leave the system.",
+            "output": "```\nAiling -> Contagious @ k0;\nContagious ->  @ k1;\nHealed ->  @ k2;\nAiling ->  @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Cured, Susceptible, and Resistant are removed. Further, Susceptible are born. Furthermore, Cured leave the system. Resistant and Susceptible are born.",
+            "output": "```\nCured ->  @ k0;\nSusceptible ->  @ k1;\nResistant ->  @ k2;\n -> Susceptible @ k3;\nCured ->  @ k4;\n -> Resistant @ k5;\n -> Susceptible @ k6;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Resistant and Ailing are removed from existence. A Resistant individual progresses to the Healthy state at a rate of 2.09.",
+            "output": "```\nResistant ->  @ k0;\nAiling ->  @ k1;\nResistant -> Healthy @ 2.09;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Rat perishes. Predation between Wolf and healthy Deer results in a single healthy Deer.",
+            "output": "```\nRat ->  @ k0;\nWolf + Deer_healthy -> Deer_healthy @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Ca is produced by CDC19 through the intermediates HYP2. Ca undergoes a reaction leading to two CDC19.",
+            "output": "```\nCDC19 -> HYP2 @ k0;\nHYP2 -> Ca @ k1;\nCa -> 2CDC19 @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Stressed Turtle is born at a rate of 6.04. Additionally, the Deer population diminishes. Additionally, poisoned Mouse is born. They are born with a rate of 2.93. Stressed Turtle are preyed on by Deer.",
+            "output": "```\n -> Turtle_stressed @ 6.04;\nDeer ->  @ k0;\n -> Mouse_poisoned @ 2.93;\nTurtle_stressed + Deer -> Deer @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Orca and Otter migrate into the system of interest. Healthy Mouse, Rabbit, and Otter leave the system.",
+            "output": "```\n -> Orca @ k0;\n -> Otter @ k1;\nMouse_healthy ->  @ k2;\nRabbit ->  @ k3;\nOtter ->  @ k4;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. CPR1 is the result of a reaction from PKA, catalyzed by TDH3. TDH3 emerges in the system. PKA finally forms TDH3 through the intermediate molecules CPR1.",
+            "output": "```\nPKA + TDH3 -> CPR1 + TDH3 @ k0;\n -> TDH3 @ k1;\nPKA -> CPR1 @ k2;\nCPR1 -> TDH3 @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Sick diminish at a rate of 0.73. A Sick individual progresses to the Ailing state at a rate of 8.03. Sick individuals emerge in the system. They are born with a rate of 9.1.",
+            "output": "```\nSick ->  @ 0.73;\nSick -> Ailing @ 8.03;\n -> Sick @ 9.1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Immune are removed from existence. Immune die with a rate of 9.81. Immune, Ailing, and Prone emerge. Prone leave the system. Their death rate is 9.12. Ailing are born.",
+            "output": "```\nImmune ->  @ 9.81;\n -> Immune @ k0;\n -> Ailing @ k1;\n -> Prone @ k2;\nProne ->  @ 9.12;\n -> Ailing @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The complex RPP2BRPP2B forms from two RPP2B with a rate of 3.54. PDC1 is eliminated. RPP2A catalyses the reaction from ALD4 to RPP2B with rate 3.71.",
+            "output": "```\n2RPP2B -> RPP2BRPP2B @ 3.54;\nPDC1 ->  @ k0;\nALD4 + RPP2A -> RPP2B + RPP2A @ 3.71;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. ADH1 emerges in the reaction medium with a rate of 8.49. SSA1 undergoes degradation. It leaves the system at a rate of 3.46.",
+            "output": "```\n -> ADH1 @ 8.49;\nSSA1 ->  @ 3.46;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. ALD4 catalyses the reaction from PGK1 to PDC1 with rate 4.99. ALD4 is produced by PDC1 through the intermediates RPP2B. RPP2B is consumed. RPP2B emerges in the reaction medium. It enters the system at a rate of 9.26.",
+            "output": "```\nPGK1 + ALD4 -> PDC1 + ALD4 @ 4.99;\nPDC1 -> RPP2B @ k0;\nRPP2B -> ALD4 @ k1;\nRPP2B ->  @ k2;\n -> RPP2B @ 9.26;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Nonimmune, Resistant, and Healthy individuals emerge in the system. Healthy cease to exist at a rate of 4.5.",
+            "output": "```\n -> Nonimmune @ k0;\n -> Resistant @ k1;\n -> Healthy @ k2;\nHealthy ->  @ 4.5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The healthy Deer population diminishes. healthy Deer leave the system with a rate of 1.66. Poisoned Wolf is born. They are born with a rate of 6.14. The healthy Deer population diminishes. They die with a rate of 7.55. The reproduction of male Mink and female Mink produces pup Mink as offspring.",
+            "output": "```\nDeer_healthy ->  @ 1.66;\n -> Wolf_poisoned @ 6.14;\nDeer_healthy ->  @ 7.55;\nMink_male + Mink_female -> Mink_male + Mink_female + Mink_pup @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. RPP2A, FBA1, and ADH1 vanish. ADH1 emerges in the reaction medium. Two ADH1 form the complex ADH1ADH1 at a rate of 5.59.",
+            "output": "```\nRPP2A ->  @ k0;\nFBA1 ->  @ k1;\nADH1 ->  @ k2;\n -> ADH1 @ k3;\n2ADH1 -> ADH1ADH1 @ 5.59;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Resistant individuals cease to exist at a rate of 1.14. A Healed individual changes its state to Prone at a rate of 5.72.",
+            "output": "```\nResistant ->  @ 1.14;\nHealed -> Prone @ 5.72;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Infectious and Cured individuals leave the system. Vaccinated transition to Infectious with a rate of 9.74.",
+            "output": "```\nInfectious ->  @ k0;\nCured ->  @ k1;\nVaccinated -> Infectious @ 9.74;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. A Infectious individual progresses to the Susceptible state. Diseased, Prone, and Infectious leave the system.",
+            "output": "```\nInfectious -> Susceptible @ k0;\nDiseased ->  @ k1;\nProne ->  @ k2;\nInfectious ->  @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased Bear enters the system. They enter the system with a rate of 4.33. Rabbit and diseased Bear leave the system.",
+            "output": "```\n -> Bear_diseased @ 4.33;\nRabbit ->  @ k0;\nBear_diseased ->  @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased and Vulnerable vanish. Further, Prone and Cured can enter the world. Additionally, Cured are removed from existence. Their death rate is 10.01. Vulnerable are born. Vulnerable are born with a rate of 0.8.",
+            "output": "```\nDiseased ->  @ k0;\nVulnerable ->  @ k1;\n -> Prone @ k2;\n -> Cured @ k3;\nCured ->  @ 10.01;\n -> Vulnerable @ 0.8;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. RPP2B is consumed. A reaction occurs from PDC1 to FBA1 and PDC1. Two FBA1 form the complex FBA1FBA1.",
+            "output": "```\nRPP2B ->  @ k0;\nPDC1 -> FBA1 + PDC1 @ k1;\n2FBA1 -> FBA1FBA1 @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Distressed Fox is born. The species distressed Fox and stressed Mouse may leave the system of interest. The mating of male stressed Mouse and female stressed Mouse can occur.",
+            "output": "```\n -> Fox_distressed @ k0;\nFox_distressed ->  @ k1;\nMouse_stressed ->  @ k2;\nMouse_stressed_male + Mouse_stressed_female -> Mouse_stressed_male + Mouse_stressed_pup + Mouse_stressed_female @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Vaccinated, Susceptible, and Ailing individuals emerge in the system. Ailing individuals cease to exist. They die with a rate of 3.21.",
+            "output": "```\n -> Vaccinated @ k0;\n -> Susceptible @ k1;\n -> Ailing @ k2;\nAiling ->  @ 3.21;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Sick Deer emerges in the system at a rate of 2.57. The sick Deer population diminishes. Their death rate is 0.41. Poisoned Orca is born. poisoned Orca are born with a rate of 5.66. Bunny and sated Turtle perish.",
+            "output": "```\n -> Deer_sick @ 2.57;\nDeer_sick ->  @ 0.41;\n -> Orca_poisoned @ 5.66;\nBunny ->  @ k0;\nTurtle_sated ->  @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. RPP2A disappears. PKA, PGK1, and RPP2A are created from nothing. Furthermore, PGK1RPL27A is synthesized from PGK1 and RPL27A with a rate of 1.11. A RPL27A molecule is transformed to PKA with a rate of 7.5 via an enzymatic reaction, catalyzed by PGK1.",
+            "output": "```\nRPP2A ->  @ k0;\n -> PKA @ k1;\n -> PGK1 @ k2;\n -> RPP2A @ k3;\nPGK1 + RPL27A -> PGK1RPL27A @ 1.11;\nRPL27A + PGK1 -> PKA + PGK1 @ 7.5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Sated Wolf dies. Their death rate is 1.07. Bear, diseased Rat, and sated Wolf emerge in the system.",
+            "output": "```\nWolf_sated ->  @ 1.07;\n -> Bear @ k0;\n -> Rat_diseased @ k1;\n -> Wolf_sated @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The sick Otter population diminishes at a rate of 6.37. Stressed Deer feed on diseased Mouse. Sick Otter perishes.",
+            "output": "```\nOtter_sick ->  @ 6.37;\nDeer_stressed + Mouse_diseased -> Deer_stressed @ k0;\nOtter_sick ->  @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Fox, Rat, and poisoned Turtle are born. In addition, Fox perishes at a rate of 3.76. Fox emerges. They enter the system with a rate of 4.14. The population of Rat decays. They die with a rate of 2.36.",
+            "output": "```\n -> Fox @ k0;\n -> Rat @ k1;\n -> Turtle_poisoned @ k2;\nFox ->  @ 3.76;\n -> Fox @ 4.14;\nRat ->  @ 2.36;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Healthy Turtle dies. healthy Turtle die with a rate of 9.68. The mating of distressed female Mouse and male distressed Mouse results in pup distressed Mouse.",
+            "output": "```\nTurtle_healthy ->  @ 9.68;\nMouse_distressed_female + Mouse_distressed_male -> Mouse_distressed_male + Mouse_distressed_female + Mouse_distressed_pup @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. TDH3 is destroyed. It is consumed with a rate of 5.71. In addition, Drp1 and Mff are generated at a rate of 3.12 from Mff. Additionally, Drp1, Opa1, and Mff emerge in the reaction medium. Opa1 is destroyed. The Opa1 is consumed with a rate of 0.28.",
+            "output": "```\nTDH3 ->  @ 5.71;\nMff -> Drp1 + Mff @ 3.12;\n -> Drp1 @ k0;\n -> Opa1 @ k1;\n -> Mff @ k2;\nOpa1 ->  @ 0.28;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. CPR1 is created from nothing. It enters the system with a rate of 8.95. Ca and CPR1 leave the system.",
+            "output": "```\n -> CPR1 @ 8.95;\nCa ->  @ k0;\nCPR1 ->  @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Infectious arise at a rate of 9.32. In addition, Diseased individuals leave the system. They die with a rate of 4.52. Infectious, Prone, and Healthy can enter the world. Healthy and Healed diminish.",
+            "output": "```\n -> Infectious @ 9.32;\nDiseased ->  @ 4.52;\n -> Infectious @ k0;\n -> Prone @ k1;\n -> Healthy @ k2;\nHealthy ->  @ k3;\nHealed ->  @ k4;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. ATP is the result of a reaction from RPP2A, catalyzed by RPP2B at a rate of 6.39. RPP2B finally forms ATP through the intermediate molecules RPP2A.",
+            "output": "```\nRPP2A + RPP2B -> ATP + RPP2B @ 6.39;\nRPP2B -> RPP2A @ k0;\nRPP2A -> ATP @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased Mouse dies. Diseased Mouse and Turtle are subject to predation, leaving only a diseased Mouse. Turtle migrates into the system of interest. Their birth rate is 10.0.",
+            "output": "```\nMouse_diseased ->  @ k0;\nMouse_diseased + Turtle -> Mouse_diseased @ k1;\n -> Turtle @ 10.0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Sick can enter the world. Healed succumb at a rate of 5.47.",
+            "output": "```\n -> Sick @ k0;\nHealed ->  @ 5.47;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. PGK1 yields CPR1 and SSA1. Further, Ca and CPR1 are formed by conversion from PKA and CPR1 with a rate of 3.68. The rate at which PGK1 is produced is 9.04.",
+            "output": "```\nPGK1 -> CPR1 + SSA1 @ k0;\nPKA + CPR1 -> Ca + CPR1 @ 3.68;\n -> PGK1 @ 9.04;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Susceptible emerge. Cured are removed from existence.",
+            "output": "```\n -> Susceptible @ k0;\nCured ->  @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Susceptible emerge. Additionally, Prone and Susceptible are eliminated. Sick and Susceptible are born.",
+            "output": "```\n -> Susceptible @ k0;\nProne ->  @ k1;\nSusceptible ->  @ k2;\n -> Sick @ k3;\n -> Susceptible @ k4;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The enzyme FBA1 promotes a reaction from RPL35A to PDC1. A transformation from PDC1 and FBA1 to two PDC1 occurs.",
+            "output": "```\nRPL35A + FBA1 -> PDC1 + FBA1 @ k0;\nPDC1 + FBA1 -> 2PDC1 @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. ATP, HSP26, and CPR1 disappear. Furthermore, a HSP26 molecule is transformed to CPR1 with a rate of 4.06 via an enzymatic reaction, catalyzed by ATP. Drp1 is produced. ATP is destroyed. It is consumed with a rate of 0.97.",
+            "output": "```\nATP ->  @ k0;\nHSP26 ->  @ k1;\nCPR1 ->  @ k2;\nHSP26 + ATP -> CPR1 + ATP @ 4.06;\n -> Drp1 @ k3;\nATP ->  @ 0.97;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Stressed Bunny, Deer, and diseased Rabbit emerge in the system. Furthermore, Deer are preyed on by diseased Rabbit. The Deer population diminishes. They die with a rate of 6.91.",
+            "output": "```\n -> Bunny_stressed @ k0;\n -> Deer @ k1;\n -> Rabbit_diseased @ k2;\nRabbit_diseased + Deer -> Rabbit_diseased @ k3;\nDeer ->  @ 6.91;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased Mouse, diseased Fox, and stressed Bunny leave the system. Additionally, diseased Fox enters the system. The diseased Mouse population diminishes with a rate of 3.13.",
+            "output": "```\nMouse_diseased ->  @ k0;\nFox_diseased ->  @ k1;\nBunny_stressed ->  @ k2;\n -> Fox_diseased @ k3;\nMouse_diseased ->  @ 3.13;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The Bear population diminishes. Their death rate is 5.6. Fox emerges. Fox enter the system with a rate of 4.78. Fox dies at a rate of 8.87.",
+            "output": "```\nBear ->  @ 5.6;\n -> Fox @ 4.78;\nFox ->  @ 8.87;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Mink is born at a rate of 7.37. Healthy Bunny diminish the distressed Deer population at a rate of 6.4. Healthy Bunny leaves the system with a rate of 3.85.",
+            "output": "```\n -> Mink @ 7.37;\nBunny_healthy + Deer_distressed -> Bunny_healthy @ 6.4;\nBunny_healthy ->  @ 3.85;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Ailing are born. Ailing are removed at a rate of 5.22. Ailing transition into Diseased.",
+            "output": "```\n -> Ailing @ k0;\nAiling ->  @ 5.22;\nAiling -> Diseased @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Orca and Fox undergo a predation with a rate of 1.03 to yield Fox. Also, the mating of sated male Mouse and female sated Mouse results in sated pup Mouse. Sick Deer is born. Their birth rate is 6.07.",
+            "output": "```\nOrca + Fox -> Fox @ 1.03;\nMouse_sated_male + Mouse_sated_female -> Mouse_sated_pup + Mouse_sated_male + Mouse_sated_female @ k0;\n -> Deer_sick @ 6.07;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Rabbit, sick Mouse, and Mink migrate into the system of interest. The mating of sick female Mouse and male sick Mouse results in pup sick Mouse.",
+            "output": "```\n -> Rabbit @ k0;\n -> Mouse_sick @ k1;\n -> Mink @ k2;\nMouse_sick_female + Mouse_sick_male -> Mouse_sick_male + Mouse_sick_pup + Mouse_sick_female @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Nonimmune and Healthy individuals emerge in the system. Resistant are eliminated. Their death rate is 5.38. Moreover, Healthy are born. Healthy are born with a rate of 1.67. Nonimmune vanish. Nonimmune die with a rate of 8.25.",
+            "output": "```\n -> Nonimmune @ k0;\n -> Healthy @ k1;\nResistant ->  @ 5.38;\n -> Healthy @ 1.67;\nNonimmune ->  @ 8.25;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The population of stressed Mouse decays. stressed Mouse leave the system with a rate of 3.22. Sated Rabbit migrates into the system of interest. They enter the system with a rate of 7.97. Sated Rabbit, sated Bear, and Otter leave the system.",
+            "output": "```\nMouse_stressed ->  @ 3.22;\n -> Rabbit_sated @ 7.97;\nRabbit_sated ->  @ k0;\nBear_sated ->  @ k1;\nOtter ->  @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. SSA1 emerges. The SSA1 is produced with a rate of 1.17. SSA1, HYP2, and CDC19 disappear.",
+            "output": "```\n -> SSA1 @ 1.17;\nSSA1 ->  @ k0;\nHYP2 ->  @ k1;\nCDC19 ->  @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The species Bear and sated Otter may leave the system of interest. Bear are preyed on by Fox at a rate of 2.99. The species poisoned female Mink and poisoned male Mink mate with a rate of 0.9, resulting in pup poisoned Mink.",
+            "output": "```\nBear ->  @ k0;\nOtter_sated ->  @ k1;\nFox + Bear -> Fox @ 2.99;\nMink_poisoned_female + Mink_poisoned_male -> Mink_poisoned_pup + Mink_poisoned_male + Mink_poisoned_female @ 0.9;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Poisoned Fox enters the system. poisoned Fox are born with a rate of 3.38. Sick female Bear and male sick Bear reproduce at a rate of 3.58.",
+            "output": "```\n -> Fox_poisoned @ 3.38;\nBear_sick_female + Bear_sick_male -> Bear_sick_pup + Bear_sick_male + Bear_sick_female @ 3.58;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. ADH1 and Opa1 are eradicated. Opa1 emerges in the reaction medium with a rate of 3.04.",
+            "output": "```\nADH1 ->  @ k0;\nOpa1 ->  @ k1;\n -> Opa1 @ 3.04;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Female Rat and male Rat reproduce at a rate of 4.96. Also, diseased Otter and Deer migrate into the system of interest. The sated Mink population diminishes at a rate of 5.74.",
+            "output": "```\nRat_female + Rat_male -> Rat_pup + Rat_male + Rat_female @ 4.96;\n -> Otter_diseased @ k0;\n -> Deer @ k1;\nMink_sated ->  @ 5.74;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Healthy Rabbit diminish the stressed Deer population at a rate of 1.68. Turtle enters the system. They enter the system with a rate of 2.78.",
+            "output": "```\nRabbit_healthy + Deer_stressed -> Rabbit_healthy @ 1.68;\n -> Turtle @ 2.78;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Bear migrates into the system of interest. Their birth rate is 0.66. Mouse perishes. Mouse die with a rate of 7.42. Mouse is born. Mouse are born with a rate of 2.44.",
+            "output": "```\n -> Bear @ 0.66;\nMouse ->  @ 7.42;\n -> Mouse @ 2.44;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Vaccinated, Susceptible, and Prone are removed from existence. Further, Susceptible individuals emerge in the system. Susceptible are born with a rate of 0.3. Ailing and Vaccinated succumb. Prone and Ailing can enter the world.",
+            "output": "```\nVaccinated ->  @ k0;\nSusceptible ->  @ k1;\nProne ->  @ k2;\n -> Susceptible @ 0.3;\nAiling ->  @ k3;\nVaccinated ->  @ k4;\n -> Prone @ k5;\n -> Ailing @ k6;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Infected are born. They enter the system with a rate of 5.27. Nonimmune, Sick, and Infected are removed from existence.",
+            "output": "```\n -> Infected @ 5.27;\nNonimmune ->  @ k0;\nSick ->  @ k1;\nInfected ->  @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Vulnerable and Cured individuals emerge in the system. Cured diminish.",
+            "output": "```\n -> Vulnerable @ k0;\n -> Cured @ k1;\nCured ->  @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Healthy, Resistant, and Ailing are born. Healthy, Resistant, and Ailing diminish. Also, Healthy are born at a rate of 7.97. Resistant are eliminated. They leave the system with a rate of 6.07.",
+            "output": "```\n -> Healthy @ k0;\n -> Resistant @ k1;\n -> Ailing @ k2;\nHealthy ->  @ k3;\nResistant ->  @ k4;\nAiling ->  @ k5;\n -> Healthy @ 7.97;\nResistant ->  @ 6.07;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. CATP is consumed. It is consumed with a rate of 7.59. In addition, a chain reaction occurs from RPP2A through HYP2 to HSP26. RPP2A is generated from cATP. The enzyme cATP promotes a reaction from HSP26 to RPP2A.",
+            "output": "```\ncATP ->  @ 7.59;\nRPP2A -> HYP2 @ k0;\nHYP2 -> HSP26 @ k1;\ncATP -> RPP2A @ k2;\nHSP26 + cATP -> RPP2A + cATP @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The species Mouse and sated Mink may leave the system of interest. Also, sated Mink are preyed on by Mouse at a rate of 2.04. Sated Mink dies. Sated Otter, sated Mink, and Mouse are born.",
+            "output": "```\nMouse ->  @ k0;\nMink_sated ->  @ k1;\nMouse + Mink_sated -> Mouse @ 2.04;\nMink_sated ->  @ k2;\n -> Otter_sated @ k3;\n -> Mink_sated @ k4;\n -> Mouse @ k5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased Bear, Rabbit, and Mink emerge in the system. Mink and Rabbit undergo a predation with a rate of 8.36 to yield Rabbit.",
+            "output": "```\n -> Bear_diseased @ k0;\n -> Rabbit @ k1;\n -> Mink @ k2;\nMink + Rabbit -> Rabbit @ 8.36;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Infected emerge. Infected are born with a rate of 4.55. Ailing, Immune, and Diseased individuals leave the system. Ailing cases develop to a Infected state.",
+            "output": "```\n -> Infected @ 4.55;\nAiling ->  @ k0;\nImmune ->  @ k1;\nDiseased ->  @ k2;\nAiling -> Infected @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Nonimmune individuals emerge in the system. They enter the system with a rate of 7.44. Nonimmune are removed from existence. Their death rate is 7.31. Infectious individuals transition to Immune.",
+            "output": "```\n -> Nonimmune @ 7.44;\nNonimmune ->  @ 7.31;\nInfectious -> Immune @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Prone individuals cease to exist. Prone die with a rate of 2.31. A Ailing individual progresses to the Contagious state.",
+            "output": "```\nProne ->  @ 2.31;\nAiling -> Contagious @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased emerge. Diseased enter the system with a rate of 4.15. Resistant and Infectious individuals leave the system. Infectious individuals emerge in the system. Infectious are born with a rate of 1.82.",
+            "output": "```\n -> Diseased @ 4.15;\nResistant ->  @ k0;\nInfectious ->  @ k1;\n -> Infectious @ 1.82;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. A chain reaction occurs from Drp1 through TDH3 to RPP2B. Drp1 and RPP2B emerge in the system. TDH3 is destroyed. It leaves the system at a rate of 7.87.",
+            "output": "```\nDrp1 -> TDH3 @ k0;\nTDH3 -> RPP2B @ k1;\n -> Drp1 @ k2;\n -> RPP2B @ k3;\nTDH3 ->  @ 7.87;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Poisoned Deer perishes. poisoned Deer die with a rate of 2.96. Also, Fox, Otter, and poisoned Deer migrate into the system of interest. The poisoned Deer population diminishes with a rate of 4.84.",
+            "output": "```\nDeer_poisoned ->  @ 2.96;\n -> Fox @ k0;\n -> Otter @ k1;\n -> Deer_poisoned @ k2;\nDeer_poisoned ->  @ 4.84;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. A Resistant individual changes its state to Vaccinated at a rate of 1.84. Vaccinated, Resistant, and Sick vanish. Vaccinated individuals emerge in the system. They are born with a rate of 2.16.",
+            "output": "```\nResistant -> Vaccinated @ 1.84;\nVaccinated ->  @ k0;\nResistant ->  @ k1;\nSick ->  @ k2;\n -> Vaccinated @ 2.16;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Diseased and Susceptible leave the system. A Infected individual progresses to the Resistant state. Immune, Susceptible, and Resistant are eliminated.",
+            "output": "```\nDiseased ->  @ k0;\nSusceptible ->  @ k1;\nInfected -> Resistant @ k2;\nImmune ->  @ k3;\nSusceptible ->  @ k4;\nResistant ->  @ k5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Healthy are born at a rate of 4.94. Contagious are removed. They leave the system with a rate of 0.04. Prone, Healthy, and Infected can enter the world.",
+            "output": "```\n -> Healthy @ 4.94;\nContagious ->  @ 0.04;\n -> Prone @ k0;\n -> Healthy @ k1;\n -> Infected @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Resistant and Infected are born. Infected, Vaccinated, and Resistant are removed.",
+            "output": "```\n -> Resistant @ k0;\n -> Infected @ k1;\nInfected ->  @ k2;\nVaccinated ->  @ k3;\nResistant ->  @ k4;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Turtle leaves the system with a rate of 0.05. Further, the species male Turtle and female Turtle mate. The poisoned Deer population diminishes. poisoned Deer leave the system with a rate of 9.17.",
+            "output": "```\nTurtle ->  @ 0.05;\nTurtle_male + Turtle_female -> Turtle_female + Turtle_male + Turtle_pup @ k0;\nDeer_poisoned ->  @ 9.17;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. MffDrp1 is synthesized from Mff and Drp1 with a rate of 0.51. A RPL35A molecule is transformed to Mff with a rate of 8.61 via an enzymatic reaction, catalyzed by RPS24B.",
+            "output": "```\nMff + Drp1 -> MffDrp1 @ 0.51;\nRPL35A + RPS24B -> Mff + RPS24B @ 8.61;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. CDC19 is removed from the system with a rate of 5.43. Furthermore, CDC19 and TDH3 are generated from two PDC1 at a rate of 6.18. RPL27A, PDC1, and TDH3 are generated spontaneously.",
+            "output": "```\nCDC19 ->  @ 5.43;\n2PDC1 -> CDC19 + TDH3 @ 6.18;\n -> RPL27A @ k0;\n -> PDC1 @ k1;\n -> TDH3 @ k2;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Stressed Bear are preyed on by Wolf at a rate of 5.02. The stressed Bear population diminishes. stressed Bear leave the system with a rate of 9.94.",
+            "output": "```\nBear_stressed + Wolf -> Wolf @ 5.02;\nBear_stressed ->  @ 9.94;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. FBA1 is the final form of a chain reaction starting from TDH3 over the intermediates RPL35A, cATP, and GPM1. CATP is produced. The cATP is produced with a rate of 2.35.",
+            "output": "```\nTDH3 -> RPL35A @ k0;\nRPL35A -> cATP @ k1;\ncATP -> GPM1 @ k2;\nGPM1 -> FBA1 @ k3;\n -> cATP @ 2.35;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Two GPM1 and RPP2A are created from RPP2A. Further, the species GPM1 and PKA undergo a conversion with a rate of 7.64 leading to GPM1 and SSA1. PKA transitions into GPM1.",
+            "output": "```\nRPP2A -> 2GPM1 + RPP2A @ k0;\nGPM1 + PKA -> GPM1 + SSA1 @ 7.64;\nPKA -> GPM1 @ k1;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. RPL27A catalyses the reaction from Ca to Mid. Additionally, a reaction occurs from Mid to RPL27A and Mid. Mid and Ca are depleted.",
+            "output": "```\nCa + RPL27A -> Mid + RPL27A @ k0;\nMid -> RPL27A + Mid @ k1;\nMid ->  @ k2;\nCa ->  @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Fox perishes. Their death rate is 4.52. Fox enters the system at a rate of 4.73. Mouse perishes. Their death rate is 4.53.",
+            "output": "```\nFox ->  @ 4.52;\n -> Fox @ 4.73;\nMouse ->  @ 4.53;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Drp1 is removed from the system. The Drp1 is consumed with a rate of 5.84. PGK1 undergoes a reaction resulting in Ca with a rate of 4.69. Two PGK1 form the complex PGK1PGK1.",
+            "output": "```\nDrp1 ->  @ 5.84;\nPGK1 -> Ca @ 4.69;\n2PGK1 -> PGK1PGK1 @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The diseased Otter population is diminished by healthy Orca. Diseased Otter, healthy Orca, and stressed Mink are born. Healthy Orca, diseased Otter, and stressed Mink perish.",
+            "output": "```\nOtter_diseased + Orca_healthy -> Otter_diseased @ k0;\n -> Otter_diseased @ k1;\n -> Orca_healthy @ k2;\n -> Mink_stressed @ k3;\nOrca_healthy ->  @ k4;\nOtter_diseased ->  @ k5;\nMink_stressed ->  @ k6;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Infected cease to exist at a rate of 5.59. Ailing and Infected emerge. Additionally, Infected and Healthy are removed from existence. Healthy are born. Healthy enter the system with a rate of 5.44.",
+            "output": "```\nInfected ->  @ 5.59;\n -> Ailing @ k0;\n -> Infected @ k1;\nInfected ->  @ k2;\nHealthy ->  @ k3;\n -> Healthy @ 5.44;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. The birth of Vaccinated individuals is governed by a rate of 7.03. Cured are eliminated. They die with a rate of 2.0.",
+            "output": "```\n -> Vaccinated @ 7.03;\nCured ->  @ 2.0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Immune transition into Vulnerable at a rate of 7.63. Vulnerable can enter the world. Vulnerable enter the system with a rate of 7.5. Additionally, Infected are eliminated. They die with a rate of 8.68. A Infected individual progresses to the Vaccinated state at a rate of 5.91.",
+            "output": "```\nImmune -> Vulnerable @ 7.63;\n -> Vulnerable @ 7.5;\nInfected ->  @ 8.68;\nInfected -> Vaccinated @ 5.91;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Susceptible, Nonimmune, and Cured are born. In addition, Nonimmune and Susceptible diminish. Nonimmune, Cured, and Susceptible are born. Cured and Sick are removed from existence.",
+            "output": "```\n -> Susceptible @ k0;\n -> Nonimmune @ k1;\n -> Cured @ k2;\nNonimmune ->  @ k3;\nSusceptible ->  @ k4;\n -> Nonimmune @ k5;\n -> Cured @ k6;\n -> Susceptible @ k7;\nCured ->  @ k8;\nSick ->  @ k9;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Prone succumb at a rate of 6.89. Susceptible cases develop to a Vaccinated state at a rate of 8.14. Cured emerge.",
+            "output": "```\nProne ->  @ 6.89;\nSusceptible -> Vaccinated @ 8.14;\n -> Cured @ k0;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Resistant succumb at a rate of 5.79. Moreover, Resistant, Nonimmune, and Diseased are born. Resistant individuals leave the system.",
+            "output": "```\nResistant ->  @ 5.79;\n -> Resistant @ k0;\n -> Nonimmune @ k1;\n -> Diseased @ k2;\nResistant ->  @ k3;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Immune emerge. Immune enter the system with a rate of 4.2. Also, Nonimmune leave the system with a rate of 8.55. In addition, the Healthy individual's birth is driven by a rate of 1.53. Immune leave the system with a rate of 0.34.",
+            "output": "```\n -> Immune @ 4.2;\nNonimmune ->  @ 8.55;\n -> Healthy @ 1.53;\nImmune ->  @ 0.34;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. A Contagious individual progresses to the Prone state at a rate of 4.84. Susceptible individuals cease to exist at a rate of 6.54. Susceptible cases develop to a Resistant state at a rate of 4.92.",
+            "output": "```\nContagious -> Prone @ 4.84;\nSusceptible ->  @ 6.54;\nSusceptible -> Resistant @ 4.92;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "The following describes a reaction system. Please translate to a formal description. Healthy are born with a rate of 4.67. Additionally, Resistant and Nonimmune are removed from existence. Nonimmune and Resistant individuals emerge in the system.",
+            "output": "```\n -> Healthy @ 4.67;\nResistant ->  @ k0;\nNonimmune ->  @ k1;\n -> Nonimmune @ k2;\n -> Resistant @ k3;\n```"
+        }
+    ]
+]

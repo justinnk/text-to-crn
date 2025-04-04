@@ -1,3 +1,4 @@
+"""
 Copyright 2025 Justin Kreikemeyer, Miłosz Jankowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -15,3 +16,21 @@ Software is furnished to do so, subject to the following conditions:
   ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
+"""
+
+
+import glob
+import json
+
+max_accuracy = float("-inf")
+max_conf = ""
+for file in glob.glob("results/lora_scan/**/*/summary.json"):
+    with open(file) as f:
+        accuracy = json.load(f)["mean"]
+        print(file, accuracy)
+        if accuracy > max_accuracy:
+            max_accuracy = accuracy
+            max_conf = file
+
+print("best\n", "-"*10)
+print(max_conf, "(", max_accuracy, ")")

@@ -1,0 +1,371 @@
+domain,category,nreactions,nreactants,nproducts,rate,text
+bio,general,1,-1,-1,True,A reaction occurs from {reactants} to {products} at a rate of {rate}.
+bio,general,1,-1,-1,True,The reaction rate from {reactants} to {products} is {rate}.
+bio,general,1,-1,1,True,{products} is generated at a rate of {rate} from {reactants}.
+bio,general,1,-1,1,True,{products} is created at a rate of {rate} from {reactants}.
+bio,general,1,-1,1,True,{products} is produced with a rate of {rate} from {reactants}.
+bio,general,1,-1,1,True,{products} is produced from {reactants} at a rate of {rate}.
+bio,general,1,-1,1,True,{products} is created from {reactants} at a rate of {rate}.
+bio,general,1,-1,2,True,{products} are generated at a rate of {rate} from {reactants}.
+bio,general,1,-1,2,True,{products} are created at a rate of {rate} from {reactants}.
+bio,general,1,-1,2,True,{products} are produced with a rate of {rate} from {reactants}.
+bio,general,1,-1,2,True,{products} are produced from {reactants} at a rate of {rate}.
+bio,general,1,-1,2,True,{products} are created from {reactants} at a rate of {rate}.
+bio,general,1,1,-1,True,{reactants} undergoes a reaction leading to {products} with a rate of {rate}.
+bio,general,1,1,-1,True,{reactants} undergoes a reaction resulting in {products} with a rate of {rate}.
+bio,general,1,1,-1,True,{reactants} yields {products} with a rate of {rate}.
+bio,general,1,1,1,True,{reactants} transitions into {products} at a rate of {rate}.
+bio,general,1,2,-1,True,{reactants} undergo a reaction leading to {products} with a rate of {rate}.
+bio,general,1,2,-1,True,{reactants} undergo a reaction resulting in {products} with a rate of {rate}.
+bio,general,1,2,-1,True,{reactants} yield {products} with a rate of {rate}.
+bio,general,1,2,2,True,{reactants} transition into {products} at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} degrades with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} decays at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} leaves the system with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is destroyed with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is destroyed at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is eliminated with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} vanishes at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is consumed at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} disappears with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is eradicated at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is removed from the system with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is removed from the system at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} diminishes with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} diminishes at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is eliminated at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is consumed with a rate of {rate}.
+bio,degradation,1,1,0,True,The population of {reactants} is reduced at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is depleted at a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} is depleted with a rate of {rate}.
+bio,degradation,1,1,0,True,{reactants} undergoes degradation at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} degrade with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} decay at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} leave the system with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are destroyed with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are destroyed at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are eliminated with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} vanish at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are consumed at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} disappear with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are eradicated at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are removed from the system with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are removed from the system at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} diminish with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} diminish at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are eliminated at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are consumed with a rate of {rate}.
+bio,degradation,1,2,0,True,The population of {reactants} are reduced at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are depleted at a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} are depleted with a rate of {rate}.
+bio,degradation,1,2,0,True,{reactants} undergo degradation at a rate of {rate}.
+bio,production,1,0,-1,True,The rate of {products} generation is {rate}.
+bio,production,1,0,-1,True,The emergence of {products} occurs at a rate of {rate}.
+bio,production,1,0,1,True,{products} emerges at a rate of {rate}.
+bio,production,1,0,1,True,{products} emerges with a rate of {rate}.
+bio,production,1,0,1,True,{products} emerges from a reaction with a rate of {rate}.
+bio,production,1,0,1,True,{products} emerges from a reaction with rate {rate}.
+bio,production,1,0,1,True,{products} emerges from a reaction with rate constant {rate}.
+bio,production,1,0,1,True,{products} emerges in the reaction medium with a rate of {rate}.
+bio,production,1,0,1,True,{products} emerges in the system at a rate of {rate}.
+bio,production,1,0,1,True,{products} enters the system at a rate of {rate}.
+bio,production,1,0,1,True,{products} is generated spontaneously at a rate of {rate}.
+bio,production,1,0,1,True,The rate at which {products} is generated is {rate}.
+bio,production,1,0,1,True,{products} materializes from the reaction medium at a rate of {rate}.
+bio,production,1,0,1,True,{products} is produced at a rate of {rate}.
+bio,production,1,0,1,True,The rate at which {products} is produced is {rate}.
+bio,production,1,0,1,True,{products} is created from nothing with a rate of {rate}.
+bio,production,1,0,2,True,{products} emerge at a rate of {rate}.
+bio,production,1,0,2,True,{products} emerge with a rate of {rate}.
+bio,production,1,0,2,True,{products} emerge from a reaction with a rate of {rate}.
+bio,production,1,0,2,True,{products} emerge from a reaction with rate {rate}.
+bio,production,1,0,2,True,{products} emerge from a reaction with rate constant {rate}.
+bio,production,1,0,2,True,{products} emerge in the reaction medium with a rate of {rate}.
+bio,production,1,0,2,True,{products} emerge in the system at a rate of {rate}.
+bio,production,1,0,2,True,{products} enter the system at a rate of {rate}.
+bio,production,1,0,2,True,{products} are generated spontaneously at a rate of {rate}.
+bio,production,1,0,2,True,The rate at which {products} are generated is {rate}.
+bio,production,1,0,2,True,{products} materialize from the reaction medium at a rate of {rate}.
+bio,production,1,0,2,True,{products} are produced at a rate of {rate}.
+bio,production,1,0,2,True,The rate at which {products} are produced is {rate}.
+bio,production,1,0,2,True,{products} are created from nothing with a rate of {rate}.
+bio,conversion,1,2,2,True,{products} are generated from {reactants} at a rate of {rate}.
+bio,conversion,1,2,2,True,{products} are the result of a conversion of {reactants} with a rate of {rate}.
+bio,conversion,1,2,2,True,A transformation from {reactants} to {products} occurs at a rate of {rate}.
+bio,conversion,1,2,2,True,{reactants} undergo a conversion leading to {products} with a rate of {rate}.
+bio,conversion,1,2,2,True,{reactants} are converted to {products} at a rate of {rate}.
+bio,conversion,1,2,2,True,The molecules {reactants} are converted to {products} at a rate of {rate}.
+bio,conversion,1,2,2,True,The species {reactants} undergo a conversion with a rate of {rate} leading to {products}.
+bio,conversion,1,2,2,True,{products} are formed by conversion from {reactants} with a rate of {rate}.
+bio,complexation,1,2,1,True,{reactants} form {products} with a rate of {rate}.
+bio,complexation,1,2,1,True,{reactants} bind to form {products} with a rate of {rate}.
+bio,complexation,1,2,1,True,{reactants} form {products} at a rate of {rate}.
+bio,complexation,1,2,1,True,{reactants} form the complex {products} at a rate of {rate}.
+bio,complexation,1,2,1,True,{products} is formed at a rate of {rate} from {reactants}.
+bio,complexation,1,2,1,True,The complex {products} forms from {reactants} with a rate of {rate}.
+bio,complexation,1,2,1,True,{products} is synthesized from {reactants} with a rate of {rate}.
+bio,complexation,1,2,1,True,{products} formation from {reactants} is facilitated by a reaction with a rate of {rate}.
+bio,complexation,1,2,1,True,{reactants} bind forming the complex {products} at a rate of {rate}.
+bio,dissociation,1,1,2,True,{reactants} dissociates back into {products} with a rate of {rate}.
+bio,dissociation,1,1,2,True,{reactants} dissolves into {products} at a rate of {rate}.
+bio,dissociation,1,1,2,True,{reactants} breaks down into {products} at a rate of {rate}.
+bio,dissociation,1,1,2,True,The complex {reactants} breaks up into {products} with a rate of {rate}.
+bio,dissociation,1,1,2,True,{reactants} decomposes into {products} at a rate of {rate}.
+bio,dissociation,1,1,2,True,{products} result from a decomposition of {reactants} at a rate of {rate}.
+bio,dissociation,1,1,2,True,The complex {reactants} dissociates to {reactants} with a rate of {rate}.
+bio,catalysis,1,2,2,True,The reaction from {reactants1} to {products1} with rate {rate} is catalyzed by the enzyme {reactants2}.
+bio,catalysis,1,2,2,True,"A {reactants1} molecule is transformed to {products1} with a rate of {rate} via an enzymatic reaction, catalyzed by {reactants2}."
+bio,catalysis,1,2,2,True,An enzymatic reaction occurs from {reactants1} to {products1} with the enzyme {reactants2} at a rate of {rate}.
+bio,catalysis,1,2,2,True,{reactants2} catalyses the reaction from {reactants1} to {products1} with rate {rate}.
+bio,catalysis,1,2,2,True,The enzyme {reactants2} promotes a reaction with rate {rate} from {reactants1} to {products1}.
+bio,catalysis,1,2,2,True,{reactants1} is transformed to {products1} at rate {rate} using {reactants2} as a catalyst.
+bio,catalysis,1,2,2,True,"{products1} is the result of a reaction from {reactants1}, catalyzed by {reactants2} at a rate of {rate}."
+bio,catalysis,1,2,2,True,The enymatic reaction from {reactants1} to {products1} with a rate of {rate} is catalyzed by {reactants2}.
+eco,general,1,1,1,True,A {reactants} transitions to {products} at a rate of {rate}.
+eco,general,1,1,1,True,{reactants} changes into {products} with a rate of {rate}.
+eco,general,1,2,2,True,"{reactants} interact, resulting in {products} with a rate of {rate}."
+eco,general,1,2,2,True,{reactants} change into {products} at a rate of {rate}.
+eco,degradation,1,-1,0,True,The mortality rate of {reactants} is {rate}.
+eco,degradation,1,1,0,True,The {reactants} population diminishes with a rate of {rate}.
+eco,degradation,1,1,0,True,The {reactants} population diminishes at a rate of {rate}.
+eco,degradation,1,1,0,True,The population of {reactants} decays at a rate of {rate}.
+eco,degradation,1,1,0,True,The population of {reactants} decays with a rate of {rate}.
+eco,degradation,1,1,0,True,{reactants} dies with a rate of {rate}.
+eco,degradation,1,1,0,True,{reactants} dies at a rate of {rate}.
+eco,degradation,1,1,0,True,{reactants} leaves the system with a rate of {rate}.
+eco,degradation,1,1,0,True,{reactants} perishes at a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} die with a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} die at a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} leave the system with a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} perish at a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} diminish at a rate of {rate}.
+eco,degradation,1,2,0,True,{reactants} diminish with a rate of {rate}.
+eco,degradation,1,2,0,True,The populations of {reactants} decay at a rate of {rate}.
+eco,degradation,1,2,0,True,The populations of {reactants} decay with a rate of {rate}.
+eco,production,1,0,1,True,{products} emerges in the system at a rate of {rate}.
+eco,production,1,0,1,True,{products} enters the system at a rate of {rate}.
+eco,production,1,0,1,True,{products} emerges with a rate of {rate}.
+eco,production,1,0,1,True,{products} migrates into the system of interest with a rate of {rate}.
+eco,production,1,0,1,True,{products} is born at a rate of {rate}.
+eco,production,1,0,2,True,{products} emerge in the system at a rate of {rate}.
+eco,production,1,0,2,True,{products} enter the system at a rate of {rate}.
+eco,production,1,0,2,True,{products} emerge with a rate of {rate}.
+eco,production,1,0,2,True,{products} migrate into the system of interest with a rate of {rate}.
+eco,production,1,0,2,True,{products} are born at a rate of {rate}.
+eco,mating,1,2,2,True,{reactants} mate resulting in {products} at a rate of {rate}.
+eco,mating,1,2,2,True,The mating of {reactants} results in {products} with a rate of {rate}.
+eco,mating,1,2,2,True,The coupling of {reactants} results in {products} at a rate of {rate}.
+eco,mating,1,2,2,True,{reactants} reproduce at a rate of {rate}.
+eco,mating,1,2,2,True,{reactants} reproduce with a rate of {rate}.
+eco,mating,1,2,2,True,{reactants} mate with a rate of {rate}.
+eco,mating,1,2,2,True,{reactants} mate at a rate of {rate}.
+eco,mating,1,2,2,True,The reproduction of {reactants} produces {products} as offspring with a rate of {rate}.
+eco,mating,1,2,2,True,"The species {reactants} mate at a rate of {rate}."
+eco,mating,1,2,2,True,"The species {reactants} mate with a rate of {rate}, resulting in {products}."
+eco,mating,1,2,2,True,The mating of {reactants} occurs at a rate of {rate}.
+eco,mating,1,2,2,True,"When {reactants} mate, they produce a {products} as offspring at a rate of {rate}."
+eco,predation,1,2,1,True,{reactants} undergo a predation with a rate of {rate} to yield {products}.
+eco,predation,1,2,1,True,"{reactants} are subject to predation, leaving only a {products} at a rate of {rate}."
+eco,predation,1,2,1,True,Predation between {reactants} results in a single {products} at a rate of {rate}.
+eco,predation,1,2,1,True,{reactants2} are preyed on by {reactants1} at a rate of {rate}.
+eco,predation,1,2,1,True,The rate of {reactants1} preying on {reactants2} is {rate}.
+eco,predation,1,2,1,True,{reactants1} hunt {reactants2} with a success rate of {rate}.
+eco,predation,1,2,1,True,{reactants1} diminish the {reactants2} population at a rate of {rate}.
+eco,predation,1,2,1,True,{reactants2} are hunted by {reactants1} with a rate of {rate}.
+eco,predation,1,2,1,True,The predation between {reactants} leaves {products} as the winner at a rate of {rate}.
+epi,general,1,1,1,True,The rate of {reactants} transitioning to the {products} phase is {rate}.
+epi,general,1,1,1,True,A {reactants} individual progresses to the {products} state at a rate of {rate}.
+epi,general,1,1,1,True,A {reactants} individual changes its state to {products} at a rate of {rate}.
+epi,general,1,1,1,True,{reactants} transition to {products} with a rate of {rate}.
+epi,general,1,1,1,True,{reactants} transition to {products} at a rate of {rate}.
+epi,general,1,1,1,True,{reactants} transition into {products} at a rate of {rate}.
+epi,general,1,1,1,True,{reactants} cases develop to a {products} state at a rate of {rate}.
+epi,general,1,2,2,True,The rate of {reactants} transitioning to the {products} phases is {rate}.
+epi,degradation,1,-1,0,True,{reactants} individuals leave the system with a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} individuals cease to exist at a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} are eliminated with a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} vanish at a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} succumb at a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} are removed from existence with a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} diminish at a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} perish with a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} are removed at a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} leave the system with a rate of {rate}.
+epi,degradation,1,-1,0,True,{reactants} cease to exist at a rate of {rate}.
+epi,production,1,0,-1,True,{products} emerge in the system at a rate of {rate}.
+epi,production,1,0,-1,True,{products} emerge with a rate of {rate}.
+epi,production,1,0,-1,True,The birth of {products} individuals is governed by a rate of {rate}.
+epi,production,1,0,-1,True,The birth process of {products} is governed by a rate of {rate}.
+epi,production,1,0,-1,True,The {products} individual's birth is driven by a rate of {rate}.
+epi,production,1,0,-1,True,The emergence of {products} in the world occurs at a rate of {rate}.
+epi,production,1,0,-1,True,{products} emerge in the system at a rate of {rate}.
+epi,production,1,0,-1,True,{products} are born with a rate of {rate}.
+epi,production,1,0,-1,True,{products} are born at a rate of {rate}.
+epi,production,1,0,-1,True,{products} arise at a rate of {rate}.
+epi,production,1,0,-1,True,{products} individuals emerge in the system at a rate of {rate}.
+bio,general,1,-1,-1,False,A reaction occurs from {reactants} to {products}.
+bio,general,1,-1,1,False,{products} is generated from {reactants}.
+bio,general,1,-1,1,False,{products} is created from {reactants}.
+bio,general,1,-1,1,False,{products} is produced from {reactants}.
+bio,general,1,-1,2,False,{products} are generated from {reactants}.
+bio,general,1,-1,2,False,{products} are created from {reactants}.
+bio,general,1,-1,2,False,{products} are produced from {reactants}.
+bio,general,1,1,-1,False,{reactants} undergoes a reaction leading to {products}.
+bio,general,1,1,-1,False,{reactants} undergoes a reaction resulting in {products}.
+bio,general,1,1,-1,False,{reactants} yields {products}.
+bio,general,1,1,1,False,{reactants} transitions into {products}.
+bio,general,1,2,-1,False,{reactants} undergo a reaction leading to {products}.
+bio,general,1,2,-1,False,{reactants} undergo a reaction resulting in {products}.
+bio,general,1,2,-1,False,{reactants} yield {products}.
+bio,general,1,2,2,False,{reactants} transition into {products}.
+bio,degradation,1,1,0,False,{reactants} degrades.
+bio,degradation,1,1,0,False,{reactants} decays.
+bio,degradation,1,1,0,False,{reactants} leaves the system.
+bio,degradation,1,1,0,False,{reactants} is destroyed.
+bio,degradation,1,1,0,False,{reactants} is destroyed.
+bio,degradation,1,1,0,False,{reactants} is eliminated.
+bio,degradation,1,1,0,False,{reactants} vanishes.
+bio,degradation,1,1,0,False,{reactants} is consumed.
+bio,degradation,1,1,0,False,{reactants} disappears.
+bio,degradation,1,1,0,False,{reactants} is eradicated.
+bio,degradation,1,1,0,False,{reactants} is removed from the system.
+bio,degradation,1,1,0,False,{reactants} diminishes.
+bio,degradation,1,1,0,False,{reactants} is depleted.
+bio,degradation,1,1,0,False,{reactants} undergoes degradation.
+bio,degradation,1,2,0,False,{reactants} degrade.
+bio,degradation,1,2,0,False,{reactants} decay.
+bio,degradation,1,2,0,False,{reactants} leave the system.
+bio,degradation,1,2,0,False,{reactants} are destroyed.
+bio,degradation,1,2,0,False,{reactants} are destroyed.
+bio,degradation,1,2,0,False,{reactants} are eliminated.
+bio,degradation,1,2,0,False,{reactants} vanish.
+bio,degradation,1,2,0,False,{reactants} are consumed.
+bio,degradation,1,2,0,False,{reactants} disappear.
+bio,degradation,1,2,0,False,{reactants} are eradicated.
+bio,degradation,1,2,0,False,{reactants} are removed from the system.
+bio,degradation,1,2,0,False,{reactants} diminish.
+bio,degradation,1,2,0,False,{reactants} are depleted.
+bio,degradation,1,2,0,False,{reactants} undergo degradation.
+bio,production,1,0,1,False,{products} emerges.
+bio,production,1,0,1,False,{products} emerges in the reaction medium.
+bio,production,1,0,1,False,{products} emerges in the system.
+bio,production,1,0,1,False,{products} enters the system.
+bio,production,1,0,1,False,{products} is generated spontaneously.
+bio,production,1,0,1,False,{products} materializes from the reaction medium.
+bio,production,1,0,1,False,{products} is produced.
+bio,production,1,0,1,False,{products} is created from nothing.
+bio,production,1,0,2,False,{products} emerge.
+bio,production,1,0,2,False,{products} emerge in the reaction medium.
+bio,production,1,0,2,False,{products} emerge in the system.
+bio,production,1,0,2,False,{products} can enter the system.
+bio,production,1,0,2,False,{products} are generated spontaneously.
+bio,production,1,0,2,False,{products} materialize from the reaction medium.
+bio,production,1,0,2,False,{products} are produced.
+bio,production,1,0,2,False,{products} are created from nothing.
+bio,conversion,1,2,2,False,A transformation from {reactants} to {products} occurs.
+bio,conversion,1,2,2,False,{reactants} undergo a conversion leading to {products}.
+bio,conversion,1,2,2,False,{reactants} are converted to {products}.
+bio,conversion,1,2,2,False,{products} are generated from {reactants}.
+bio,conversion,1,2,2,False,{products} are the result of a conversion of {reactants}.
+bio,conversion,1,2,2,False,The molecules {reactants} are converted to {products}.
+bio,conversion,1,2,2,False,The species {reactants} undergo a conversion leading to {products}.
+bio,conversion,1,2,2,False,{products} are formed by conversion from {reactants}.
+bio,complexation,1,2,1,False,{reactants} form {products}.
+bio,complexation,1,2,1,False,{reactants} bind to form {products}.
+bio,complexation,1,2,1,False,{reactants} form the complex {products}.
+bio,complexation,1,2,1,False,{products} is formed by complexation from {reactants}.
+bio,complexation,1,2,1,False,The complex {products} forms from {reactants}.
+bio,complexation,1,2,1,False,{products} is the result of {reactants} binding.
+bio,complexation,1,2,1,False,{reactants} bind forming the complex {products}.
+bio,dissociation,1,1,2,False,{reactants} dissociates back into {products}.
+bio,dissociation,1,1,2,False,{reactants} dissolves into {products}.
+bio,dissociation,1,1,2,False,{reactants} breaks down into {products}.
+bio,dissociation,1,1,2,False,{reactants} decomposes into {products}.
+bio,dissociation,1,1,2,False,{products} result from a decomposition of {reactants}.
+bio,dissociation,1,1,2,False,The complex {reactants} breaks up into {products}.
+bio,chain,n,1,1,False,{products} is generated from {reactants} through the intermediates {intermediates}.
+bio,chain,n,1,1,False,{products} is produced by {reactants} through the intermediates {intermediates}.
+bio,chain,n,1,1,False,{reactants} finally forms {products} through the intermediate molecules {intermediates}.
+bio,chain,n,1,1,False,{reactants} generates {products} through intermediate reactions over {intermediates}.
+bio,chain,n,1,1,False,A chain reaction occurs from {reactants} through {intermediates} to {products}.
+bio,chain,n,1,1,False,A chain of reactions occurs from {reactants} through {intermediates} to finally form {products}.
+bio,chain,n,1,1,False,A cascade of reactions occurs from {reactants} to {products} over {intermediates}.
+bio,chain,n,1,1,False,{products} is the final form of a chain reaction starting from {reactants} over the intermediates {intermediates}.
+bio,catalysis,1,2,2,False,The reaction from {reactants1} to {products1} is catalyzed by the enzyme {reactants2}.
+bio,catalysis,1,2,2,False,{reactants2} catalyses the reaction from {reactants1} to {products1}.
+bio,catalysis,1,2,2,False,The enzyme {reactants2} promotes a reaction from {reactants1} to {products1}.
+bio,catalysis,1,2,2,False,"A {reactants1} molecule is transformed to {products1} via an enzymatic reaction, catalyzed by {reactants2}."
+bio,catalysis,1,2,2,False,An enzymatic reaction occurs from {reactants1} to {products1} with the enzyme {reactants2}.
+bio,catalysis,1,2,2,False,{reactants1} are transformed to {products1} using {reactants2} as a catalyst.
+bio,catalysis,1,2,2,False,"{products1} is the result of a reaction from {reactants1}, catalyzed by {reactants2}."
+bio,catalysis,1,2,2,False,The enymatic reaction from {reactants1} to {products1} is catalyzed by {reactants2}.
+eco,general,1,1,1,False,A {reactants} transitions to a {products}.
+eco,general,1,1,1,False,A {reactants} changes into a {products}.
+eco,general,1,2,-1,False,"{reactants} interact, resulting in {products}."
+eco,general,1,2,-1,False,{reactants} change into {products}.
+eco,degradation,1,1,0,False,The {reactants} population diminishes.
+eco,degradation,1,1,0,False,The population of {reactants} decays.
+eco,degradation,1,1,0,False,{reactants} dies.
+eco,degradation,1,1,0,False,A {reactants} may leave the system.
+eco,degradation,1,1,0,False,{reactants} perishes.
+eco,degradation,1,2,0,False,{reactants} die.
+eco,degradation,1,2,0,False,{reactants} leave the system.
+eco,degradation,1,2,0,False,{reactants} perish.
+eco,degradation,1,2,0,False,The species {reactants} may leave the system of interest.
+eco,production,1,0,1,False,{products} emerges in the system.
+eco,production,1,0,1,False,{products} enters the system.
+eco,production,1,0,1,False,{products} emerges.
+eco,production,1,0,1,False,{products} migrates into the system of interest.
+eco,production,1,0,1,False,{products} is born.
+eco,production,1,0,2,False,{products} emerge in the system.
+eco,production,1,0,2,False,{products} can enter the system.
+eco,production,1,0,2,False,{products} migrate into the system of interest.
+eco,production,1,0,2,False,{products} are born.
+eco,mating,1,2,2,False,{reactants} mate resulting in {products}.
+eco,mating,1,2,2,False,The mating of {reactants} results in {products}.
+eco,mating,1,2,2,False,The coupling of {reactants} results in {products}.
+eco,mating,1,2,2,False,{reactants} mate.
+eco,mating,1,2,2,False,{reactants} reproduce.
+eco,mating,1,2,2,False,"The species {reactants} mate."
+eco,mating,1,2,2,False,The reproduction of {reactants} produces {products} as offspring.
+eco,mating,1,2,2,False,"The species {reactants} mate, resulting in {products}."
+eco,mating,1,2,2,False,The mating of {reactants} can occur.
+eco,mating,1,2,2,False,"When {reactants} mate, they produce a {products} as offspring."
+eco,predation,1,2,1,False,{reactants} undergo a predation to yield {products}.
+eco,predation,1,2,1,False,"{reactants} are subject to predation, leaving only a {products}."
+eco,predation,1,2,1,False,Predation between {reactants} results in a single {products}.
+eco,predation,1,2,1,False,The {reactants1} population is diminished by {reactants2}.
+eco,predation,1,2,1,False,{reactants1} feed on {reactants2}.
+eco,predation,1,2,1,False,{reactants2} are preyed on by {reactants1}.
+eco,predation,1,2,1,False,{reactants2} are hunted by {reactants1}.
+eco,predation,1,2,1,False,The predation between {reactants} leaves {products} as the winner.
+eco,chain,n,1,1,False,The final form {products} is reached from {reactants} by metamorphosis over the {intermediates} states.
+eco,chain,n,1,1,False,"By metamorphosis, the {products} state is reached from {reactants} over the intermediate states {intermediates}."
+eco,chain,n,1,1,False,{reactants} develop to {products} over {intermediates}.
+eco,chain,n,1,1,False,{reactants} develop to {products} over the states {intermediates}.
+eco,chain,n,1,1,False,{reactants} progress to become {products} over the intermediate states {intermediates}.
+eco,chain,n,1,1,False,{reactants} progress to {products} over the intermediate forms {intermediates}.
+eco,chain,n,1,1,False,{products} is the final state of a chain starting from {reactants} over the intermediates {intermediates}.
+epi,general,1,1,1,False,A {reactants} individual progresses to the {products} state.
+epi,general,1,1,1,False,A {reactants} individual changes its state to {products}.
+epi,general,1,1,1,False,{reactants} individuals transition to {products}.
+epi,general,1,1,1,False,{reactants} transition into {products}.
+epi,general,1,1,1,False,{reactants} cases develop to a {products} state.
+epi,degradation,1,-1,0,False,{reactants} individuals leave the system.
+epi,degradation,1,-1,0,False,{reactants} individuals cease to exist.
+epi,degradation,1,-1,0,False,{reactants} are eliminated.
+epi,degradation,1,-1,0,False,{reactants} vanish.
+epi,degradation,1,-1,0,False,{reactants} succumb.
+epi,degradation,1,-1,0,False,{reactants} are removed from existence.
+epi,degradation,1,-1,0,False,{reactants} diminish.
+epi,degradation,1,-1,0,False,{reactants} perish.
+epi,degradation,1,-1,0,False,{reactants} are removed.
+epi,degradation,1,-1,0,False,{reactants} leave the system.
+epi,degradation,1,-1,0,False,{reactants} cease to exist.
+epi,production,1,0,-1,False,{products} emerge in the system.
+epi,production,1,0,-1,False,{products} emerge.
+epi,production,1,0,-1,False,{products} are born.
+epi,production,1,0,-1,False,{products} can enter the world.
+epi,production,1,0,-1,False,{products} individuals emerge in the system.
+epi,infection,1,2,2,False,{reactants1} are infected upon contact with a {reactants2} individual.
+epi,infection,1,2,2,False,The rate at which {reactants1} are infected by {reactants2} is {rate}.

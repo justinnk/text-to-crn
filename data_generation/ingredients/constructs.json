@@ -1,0 +1,22 @@
+{
+   "bio": [
+       "general", 
+       "degradation", "degradation_multi", "degradation_relational",
+       "production", "production_multi", "production_relational",
+       "complexation",
+       "chain",
+       "catalysis",
+       "conversion"
+   ],
+   "eco": [
+       "degradation", "degradation_multi", "degradation_relational",
+       "production", "production_multi", "production_relational",
+       "mating",
+       "predation"
+   ],
+   "epi": [
+       "general", 
+       "degradation", "degradation_multi", "degradation_relational",
+       "production", "production_multi", "production_relational"
+   ]
+}

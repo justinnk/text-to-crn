@@ -1,3 +1,4 @@
+"""
 Copyright 2025 Justin Kreikemeyer, Miłosz Jankowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -15,3 +16,36 @@ Software is furnished to do so, subject to the following conditions:
   ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
+"""
+
+from TransformersAPI import TransformersAPI
+from ChatGptAPI import ChatGptAPI
+import datetime
+import pprint
+import os
+
+if __name__ == "__main__":
+  import readline
+  api = TransformersAPI(
+    #grammar_path="reactions.gbnf",
+    #lora_path="",
+    num_few_shot_examples=10,
+    use_few_shot=True,
+    use_sys_prompt=True,
+    embed_examples=False
+  )
+  #api = ChatGptAPI(
+  #  num_few_shot_examples=10
+  #)
+  messages = []
+  while True:
+    user = input("User:\n")
+    if user == "!save":
+      if not os.path.exists("chats"):
+        os.mkdir("chats")
+      with open(f"chats/chat-{datetime.datetime.now().replace(microsecond=0).isoformat()}", "w") as file:
+        pprint.pprint(messages, file)
+      exit()
+    assistant, messages = api.chat(messages, user, 1234, temperature=0.0)
+    print("Assistant:\n", assistant)
+    print(messages)

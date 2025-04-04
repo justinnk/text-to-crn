@@ -1,3 +1,4 @@
+"""
 Copyright 2025 Justin Kreikemeyer, Miłosz Jankowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -15,3 +16,15 @@ Software is furnished to do so, subject to the following conditions:
   ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
+"""
+
+import datetime
+
+def log(name: str="Unknown", log_file=None, *msgs):
+  msgs = " ".join(map(str, msgs))
+  for msg in msgs.split("\n"):
+    print(f"[{name}] {datetime.datetime.now().isoformat()} ", msg)
+    if log_file is not None:
+      log_file.write(f"[{name}] {datetime.datetime.now().isoformat()}  " + msg + "\n")
+  if log_file is not None:
+    log_file.flush()

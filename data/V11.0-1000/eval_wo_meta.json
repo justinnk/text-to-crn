@@ -1,0 +1,32 @@
+[
+    [
+        {
+            "instruction": "The interaction of susceptible with infected individuals results in two infected individuals at a rate of 0.02. Infected individuals recover at a rate of 5.",
+            "output": "```\nsusceptible + infected -> 2infected @ 0.02;\ninfected -> recovered @ 5;\n```"
+        },
+        {
+            "instruction": "Change the rate of the first reaction in the above system to 0.5.",
+            "output": "```\nsusceptible + infected -> 2infected @ 0.5;\ninfected -> recovered @ 5;\n```"
+        }
+    ],
+    [
+        {
+            "instruction": "Two healthy bear can reproduce at a rate of 7, resulting in two healthy bear and one bear pup.",
+            "output": "```\nbear_healthy_female + bear_healthy_male -> bear_healthy_female + bear_pup + bear_healthy_male @ 7;\n```"
+        },
+        {
+            "instruction": "Additionally, bear pups progress to healthy bear with a rate of 3.",
+            "output": "```\nbear_healthy_female + bear_healthy_male -> bear_healthy_female + bear_pup + bear_healthy_male @ 7;\nbear_pup -> bear_healthy @ 3;```"
+        }
+    ],
+    [
+        {
+            "instruction": "The Enzyme binds to the Substrate, forming an EnzymeSubstrate complex at a rate of 2.1.At a rate of 3.4, the EnzymeSubstrate complex may move to an EnzymeProduct complex.Finally, the EnzymeProduct complex may dissociate into the Enzyme and Product with a rate of 1.1.",
+            "output": "```\nEnzyme + Substrate -> EnzymeSubstrate @ 2.1;\nEnzymeSubstrate -> EnzymeProduct @ 3.4;\nEnzymeProduct -> Enzyme + Product @ 1.1;\n```"
+        },
+        {
+            "instruction": "I was mistaken. The rate of EnzymeProduct formation is 4.2.",
+            "output": "```\nEnzyme + Substrate -> EnzymeSubstrate @ 2.1;\nEnzymeSubstrate -> EnzymeProduct @ 4.2;\nEnzymeProduct -> Enzyme + Product @ 1.1;\n```"
+        }
+    ]
+]

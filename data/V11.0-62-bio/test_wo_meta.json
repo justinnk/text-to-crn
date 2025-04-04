@@ -1,0 +1,3091 @@
+{
+  "metadata": {
+    "description": "Small dataset with 1000 samples to test few shot generation. Uses manually procured eval set.",
+    "version": "V11.0-1000",
+    "time": "Sun Jan 26 16:08:28 2025",
+    "seed": 424242,
+    "num_samples": 200
+  },
+  "samples": [
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn is eradicated. It leaves the system with a rate of 8.98. Mfn undergoes a reaction resulting in CaN.",
+        "reactions": [
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "8.98"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Mfn"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nMfn ->  @ 8.98;\nMfn -> CaN @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B, Fis1, and ENO2 are destroyed. A chain of reactions occurs from ENO2 through RPS16B to finally form PMA1. The enymatic reaction from PMA1 to RPS16B with a rate of 3.03 is catalyzed by Fis1. PMA1 and RPS16B are destroyed.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "PMA1",
+              "Fis1"
+            ],
+            "right": [
+              "RPS16B",
+              "Fis1"
+            ],
+            "rate": "3.03"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k5"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k6"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 8,
+        "domain": "bio",
+        "output": "```\nRPS16B ->  @ k0;\nFis1 ->  @ k1;\nENO2 ->  @ k2;\nENO2 -> RPS16B @ k3;\nRPS16B -> PMA1 @ k4;\nPMA1 + Fis1 -> RPS16B + Fis1 @ 3.03;\nPMA1 ->  @ k5;\nRPS16B ->  @ k6;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN materializes from the reaction medium. Mfn is eradicated. It leaves the system with a rate of 0.5. Mfn enters the system. It is produced at a rate of 0.61. CaN decays. It leaves the system with a rate of 2.38.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "0.5"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "0.61"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "2.38"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Mfn"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> CaN @ k0;\nMfn ->  @ 0.5;\n -> Mfn @ 0.61;\nCaN ->  @ 2.38;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn degrades. It leaves the system with a rate of 8.8. A chain of reactions occurs from ENO2 through Mfn to finally form Fis1.",
+        "reactions": [
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "8.8"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Mfn"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nMfn ->  @ 8.8;\nENO2 -> Mfn @ k0;\nMfn -> Fis1 @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 decays. It leaves the system with a rate of 2.63. Additionally, CaN is generated from Mfn through the intermediates ENO2 and RPS16B. Two Mfn are converted to Mfn and ENO2 at a rate of 4.9.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "2.63"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "2Mfn"
+            ],
+            "right": [
+              "Mfn",
+              "ENO2"
+            ],
+            "rate": "4.9"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn",
+          "RPS16B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\nENO2 ->  @ 2.63;\nMfn -> ENO2 @ k0;\nENO2 -> RPS16B @ k1;\nRPS16B -> CaN @ k2;\n2Mfn -> Mfn + ENO2 @ 4.9;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The species PMA1 and ENO2 undergo a conversion leading to PMA1 and Fis1. Furthermore, ENO2 degrades with a rate of 2.7. Further, PMA1 and ENO2 materialize from the reaction medium. RPS27B, ENO2, and Fis1 diminish.",
+        "reactions": [
+          {
+            "left": [
+              "PMA1",
+              "ENO2"
+            ],
+            "right": [
+              "PMA1",
+              "Fis1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "2.7"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k5"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 7,
+        "domain": "bio",
+        "output": "```\nPMA1 + ENO2 -> PMA1 + Fis1 @ k0;\nENO2 ->  @ 2.7;\n -> PMA1 @ k1;\n -> ENO2 @ k2;\nRPS27B ->  @ k3;\nENO2 ->  @ k4;\nFis1 ->  @ k5;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 is consumed with a rate of 5.1. Additionally, Mfn materializes from the reaction medium. Furthermore, two ENO2 form ENO2ENO2 with a rate of 8.1. Mfn enters the system. It is produced at a rate of 1.04.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "5.1"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "2ENO2"
+            ],
+            "right": [
+              "ENO2ENO2"
+            ],
+            "rate": "8.1"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "1.04"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "ENO2ENO2",
+          "Mfn"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nENO2 ->  @ 5.1;\n -> Mfn @ k0;\n2ENO2 -> ENO2ENO2 @ 8.1;\n -> Mfn @ 1.04;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B and RPS27B bind forming the complex RPS16BRPS27B. Fis1 enters the system.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B",
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16BRPS27B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "RPS16B",
+          "RPS16BRPS27B",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nRPS16B + RPS27B -> RPS16BRPS27B @ k0;\n -> Fis1 @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN and RPS27B are destroyed. Additionally, PMA1 and RPS16B are converted to RPS16B and Fis1 at a rate of 1.75. CaN decays.",
+        "reactions": [
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "PMA1",
+              "RPS16B"
+            ],
+            "right": [
+              "RPS16B",
+              "Fis1"
+            ],
+            "rate": "1.75"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Fis1",
+          "PMA1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nCaN ->  @ k0;\nRPS27B ->  @ k1;\nPMA1 + RPS16B -> RPS16B + Fis1 @ 1.75;\nCaN ->  @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The molecules Fis1 and CaN are converted to ENO2 and Fis1 at a rate of 7.6. ENO2 and PMA1 are destroyed. The reaction from ENO2 to PMA1 is catalyzed by the enzyme Fis1. CaN is generated from Fis1 through the intermediates RPS16B, PMA1, and ENO2.",
+        "reactions": [
+          {
+            "left": [
+              "Fis1",
+              "CaN"
+            ],
+            "right": [
+              "ENO2",
+              "Fis1"
+            ],
+            "rate": "7.6"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "ENO2",
+              "Fis1"
+            ],
+            "right": [
+              "PMA1",
+              "Fis1"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k5"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k6"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Fis1",
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 8,
+        "domain": "bio",
+        "output": "```\nFis1 + CaN -> ENO2 + Fis1 @ 7.6;\nENO2 ->  @ k0;\nPMA1 ->  @ k1;\nENO2 + Fis1 -> PMA1 + Fis1 @ k2;\nFis1 -> RPS16B @ k3;\nRPS16B -> PMA1 @ k4;\nPMA1 -> ENO2 @ k5;\nENO2 -> CaN @ k6;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The reaction from CaN to ENO2 is catalyzed by the enzyme PMA1. CaN materializes from the reaction medium. Also, PMA1 decays. It leaves the system with a rate of 3.96. CaN emerges in the system at a rate of 1.42.",
+        "reactions": [
+          {
+            "left": [
+              "CaN",
+              "PMA1"
+            ],
+            "right": [
+              "ENO2",
+              "PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "3.96"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "1.42"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "PMA1"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nCaN + PMA1 -> ENO2 + PMA1 @ k0;\n -> CaN @ k1;\nPMA1 ->  @ 3.96;\n -> CaN @ 1.42;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS27B is generated from Fis1 through the intermediates RPS16B. RPS16B undergoes a reaction resulting in two RPS27B and Fis1.",
+        "reactions": [
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "2RPS27B",
+              "Fis1"
+            ],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nFis1 -> RPS16B @ k0;\nRPS16B -> RPS27B @ k1;\nRPS16B -> 2RPS27B + Fis1 @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B and Mfn form RPS16BMfn with a rate of 6.9. Moreover, RPS16B materializes from the reaction medium. Mfn and RPS16B are produced from Mfn at a rate of 5.98.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B",
+              "Mfn"
+            ],
+            "right": [
+              "RPS16BMfn"
+            ],
+            "rate": "6.9"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [
+              "Mfn",
+              "RPS16B"
+            ],
+            "rate": "5.98"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "RPS16B",
+          "RPS16BMfn"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nRPS16B + Mfn -> RPS16BMfn @ 6.9;\n -> RPS16B @ k0;\nMfn -> Mfn + RPS16B @ 5.98;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn materializes from the reaction medium at a rate of 3.27. Also, PMA1 yields RPS27B with a rate of 1.45. PMA1 and RPS16B bind forming the complex PMA1RPS16B. Mfn, RPS16B, and RPS27B materialize from the reaction medium.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "3.27"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "1.45"
+          },
+          {
+            "left": [
+              "PMA1",
+              "RPS16B"
+            ],
+            "right": [
+              "PMA1RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "PMA1",
+          "PMA1RPS16B",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\n -> Mfn @ 3.27;\nPMA1 -> RPS27B @ 1.45;\nPMA1 + RPS16B -> PMA1RPS16B @ k0;\n -> Mfn @ k1;\n -> RPS16B @ k2;\n -> RPS27B @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The enzyme Fis1 promotes a reaction with rate 4.5 from RPS27B to PMA1. RPS27B enters the system.",
+        "reactions": [
+          {
+            "left": [
+              "RPS27B",
+              "Fis1"
+            ],
+            "right": [
+              "PMA1",
+              "Fis1"
+            ],
+            "rate": "4.5"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nRPS27B + Fis1 -> PMA1 + Fis1 @ 4.5;\n -> RPS27B @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B is depleted at a rate of 5.86. Also, RPS16B enters the system. It is produced at a rate of 8.57. A chain of reactions occurs from PMA1 through CaN, RPS16B, and RPS27B to finally form Mfn.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "5.86"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "8.57"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Mfn",
+          "PMA1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nRPS16B ->  @ 5.86;\n -> RPS16B @ 8.57;\nPMA1 -> CaN @ k0;\nCaN -> RPS16B @ k1;\nRPS16B -> RPS27B @ k2;\nRPS27B -> Mfn @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. PMA1 yields PMA1 and two RPS16B with a rate of 2.73. PMA1 decays. It leaves the system with a rate of 8.01.",
+        "reactions": [
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "PMA1",
+              "2RPS16B"
+            ],
+            "rate": "2.73"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "8.01"
+          }
+        ],
+        "entities": [
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nPMA1 -> PMA1 + 2RPS16B @ 2.73;\nPMA1 ->  @ 8.01;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The enzyme Mfn promotes a reaction with rate 1.41 from RPS27B to RPS16B. CaN and RPS16B are formed by conversion from ENO2 and CaN.",
+        "reactions": [
+          {
+            "left": [
+              "RPS27B",
+              "Mfn"
+            ],
+            "right": [
+              "RPS16B",
+              "Mfn"
+            ],
+            "rate": "1.41"
+          },
+          {
+            "left": [
+              "ENO2",
+              "CaN"
+            ],
+            "right": [
+              "CaN",
+              "RPS16B"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nRPS27B + Mfn -> RPS16B + Mfn @ 1.41;\nENO2 + CaN -> CaN + RPS16B @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B materializes from the reaction medium at a rate of 8.99. PMA1 is generated from RPS27B through the intermediates RPS16B and CaN.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "8.99"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "PMA1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> RPS16B @ 8.99;\nRPS27B -> RPS16B @ k0;\nRPS16B -> CaN @ k1;\nCaN -> PMA1 @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS27B is produced from RPS16B at a rate of 6.29. Further, RPS27B materializes from the reaction medium. It is produced at a rate of 6.53. ENO2 is eradicated. It leaves the system with a rate of 7.15. CaN and RPS27B bind forming the complex CaNRPS27B.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "6.29"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "6.53"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "7.15"
+          },
+          {
+            "left": [
+              "CaN",
+              "RPS27B"
+            ],
+            "right": [
+              "CaNRPS27B"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "CaNRPS27B",
+          "ENO2",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nRPS16B -> RPS27B @ 6.29;\n -> RPS27B @ 6.53;\nENO2 ->  @ 7.15;\nCaN + RPS27B -> CaNRPS27B @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. A chain of reactions occurs from RPS27B through PMA1 to finally form ENO2. RPS27B and ENO2 bind forming the complex RPS27BENO2 at a rate of 7.74.",
+        "reactions": [
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS27B",
+              "ENO2"
+            ],
+            "right": [
+              "RPS27BENO2"
+            ],
+            "rate": "7.74"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "PMA1",
+          "RPS27B",
+          "RPS27BENO2"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nRPS27B -> PMA1 @ k0;\nPMA1 -> ENO2 @ k1;\nRPS27B + ENO2 -> RPS27BENO2 @ 7.74;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN is generated from ENO2 through the intermediates PMA1. Further, CaN, ENO2, and PMA1 are destroyed. Further, CaN enters the system. It is produced at a rate of 0.39. CaN decays. It leaves the system with a rate of 1.21.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k4"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "0.39"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "1.21"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "PMA1"
+        ],
+        "num_reactions": 7,
+        "domain": "bio",
+        "output": "```\nENO2 -> PMA1 @ k0;\nPMA1 -> CaN @ k1;\nCaN ->  @ k2;\nENO2 ->  @ k3;\nPMA1 ->  @ k4;\n -> CaN @ 0.39;\nCaN ->  @ 1.21;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS27B and Fis1 materialize from the reaction medium. CaN and RPS27B bind forming the complex CaNRPS27B at a rate of 4.33. CaN and RPS16B materialize from the reaction medium.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "CaN",
+              "RPS27B"
+            ],
+            "right": [
+              "CaNRPS27B"
+            ],
+            "rate": "4.33"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "CaNRPS27B",
+          "Fis1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\n -> RPS27B @ k0;\n -> Fis1 @ k1;\nCaN + RPS27B -> CaNRPS27B @ 4.33;\n -> CaN @ k2;\n -> RPS16B @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Fis1 degrades. It leaves the system with a rate of 1.37. RPS27B materializes from the reaction medium at a rate of 8.08.",
+        "reactions": [
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "1.37"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "8.08"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nFis1 ->  @ 1.37;\n -> RPS27B @ 8.08;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN enters the system. Also, a chain of reactions occurs from ENO2 through RPS16B to finally form CaN. RPS27B decays. It leaves the system with a rate of 0.14.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "0.14"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> CaN @ k0;\nENO2 -> RPS16B @ k1;\nRPS16B -> CaN @ k2;\nRPS27B ->  @ 0.14;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Fis1 materializes from the reaction medium. It is produced at a rate of 9.12. Further, Fis1 and CaN are produced from Fis1 at a rate of 0.9. Fis1 degrades. The enzyme Fis1 promotes a reaction with rate 7.08 from PMA1 to CaN.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "9.12"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "Fis1",
+              "CaN"
+            ],
+            "rate": "0.9"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1",
+              "Fis1"
+            ],
+            "right": [
+              "CaN",
+              "Fis1"
+            ],
+            "rate": "7.08"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Fis1",
+          "PMA1"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> Fis1 @ 9.12;\nFis1 -> Fis1 + CaN @ 0.9;\nFis1 ->  @ k0;\nPMA1 + Fis1 -> CaN + Fis1 @ 7.08;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS27B and Mfn are formed by conversion from ENO2 and Mfn. RPS27B yields ENO2 with a rate of 4.66. Mfn is generated from Fis1 through the intermediates ENO2.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2",
+              "Mfn"
+            ],
+            "right": [
+              "RPS27B",
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "4.66"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Mfn",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nENO2 + Mfn -> RPS27B + Mfn @ k0;\nRPS27B -> ENO2 @ 4.66;\nFis1 -> ENO2 @ k1;\nENO2 -> Mfn @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn, Fis1, and CaN are generated from CaN. Fis1 and CaN bind forming the complex Fis1CaN at a rate of 7.14.",
+        "reactions": [
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "Mfn",
+              "Fis1",
+              "CaN"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Fis1",
+              "CaN"
+            ],
+            "right": [
+              "Fis1CaN"
+            ],
+            "rate": "7.14"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Fis1",
+          "Fis1CaN",
+          "Mfn"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nCaN -> Mfn + Fis1 + CaN @ k0;\nFis1 + CaN -> Fis1CaN @ 7.14;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B and RPS27B are destroyed. RPS27B undergoes a reaction resulting in RPS16B.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nRPS16B ->  @ k0;\nRPS27B ->  @ k1;\nRPS27B -> RPS16B @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B materializes from the reaction medium. It is produced at a rate of 8.13. RPS16B degrades.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "8.13"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "RPS16B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\n -> RPS16B @ 8.13;\nRPS16B ->  @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B degrades with a rate of 5.24. RPS16B materializes from the reaction medium at a rate of 5.2. RPS16B decays.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "5.24"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "5.2"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "RPS16B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nRPS16B ->  @ 5.24;\n -> RPS16B @ 5.2;\nRPS16B ->  @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN and RPS16B bind forming the complex CaNRPS16B. Additionally, the enymatic reaction from Mfn to Fis1 with a rate of 6.58 is catalyzed by ENO2. Fis1 materializes from the reaction medium. It is produced at a rate of 9.69.",
+        "reactions": [
+          {
+            "left": [
+              "CaN",
+              "RPS16B"
+            ],
+            "right": [
+              "CaNRPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn",
+              "ENO2"
+            ],
+            "right": [
+              "Fis1",
+              "ENO2"
+            ],
+            "rate": "6.58"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "9.69"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "CaNRPS16B",
+          "ENO2",
+          "Fis1",
+          "Mfn",
+          "RPS16B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nCaN + RPS16B -> CaNRPS16B @ k0;\nMfn + ENO2 -> Fis1 + ENO2 @ 6.58;\n -> Fis1 @ 9.69;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 and RPS27B degrade. Furthermore, Mfn is generated from ENO2 through the intermediates RPS27B and Fis1. ENO2 degrades. It leaves the system with a rate of 3.17.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "3.17"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Mfn",
+          "RPS27B"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nENO2 ->  @ k0;\nRPS27B ->  @ k1;\nENO2 -> RPS27B @ k2;\nRPS27B -> Fis1 @ k3;\nFis1 -> Mfn @ k4;\nENO2 ->  @ 3.17;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2, PMA1, and CaN can enter the system. Also, CaN is generated from RPS27B through the intermediates ENO2 and PMA1. RPS27B decays. It leaves the system with a rate of 9.95.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k5"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "9.95"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 7,
+        "domain": "bio",
+        "output": "```\n -> ENO2 @ k0;\n -> PMA1 @ k1;\n -> CaN @ k2;\nRPS27B -> ENO2 @ k3;\nENO2 -> PMA1 @ k4;\nPMA1 -> CaN @ k5;\nRPS27B ->  @ 9.95;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. PMA1 and Fis1 bind forming the complex PMA1Fis1 at a rate of 1.28. Additionally, PMA1, Fis1, and Mfn materialize from the reaction medium. Mfn and Fis1 degrade.",
+        "reactions": [
+          {
+            "left": [
+              "PMA1",
+              "Fis1"
+            ],
+            "right": [
+              "PMA1Fis1"
+            ],
+            "rate": "1.28"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k4"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "Mfn",
+          "PMA1",
+          "PMA1Fis1"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nPMA1 + Fis1 -> PMA1Fis1 @ 1.28;\n -> PMA1 @ k0;\n -> Fis1 @ k1;\n -> Mfn @ k2;\nMfn ->  @ k3;\nFis1 ->  @ k4;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Fis1 materializes from the reaction medium at a rate of 2.46. Fis1 undergoes a reaction resulting in two CaN.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "2.46"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "2CaN"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Fis1"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\n -> Fis1 @ 2.46;\nFis1 -> 2CaN @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN materializes from the reaction medium at a rate of 4.71. Mfn decays. It leaves the system with a rate of 8.61. RPS16B, CaN, and Mfn are generated from CaN. The molecules RPS16B and ENO2 are converted to RPS16B and CaN at a rate of 9.12.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "4.71"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "8.61"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "RPS16B",
+              "CaN",
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B",
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B",
+              "CaN"
+            ],
+            "rate": "9.12"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn",
+          "RPS16B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> CaN @ 4.71;\nMfn ->  @ 8.61;\nCaN -> RPS16B + CaN + Mfn @ k0;\nRPS16B + ENO2 -> RPS16B + CaN @ 9.12;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B is eradicated. Moreover, PMA1 and Mfn bind forming the complex PMA1Mfn. Also, RPS27B, Mfn, and PMA1 are produced from CaN at a rate of 3.81. Mfn and PMA1 are destroyed.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1",
+              "Mfn"
+            ],
+            "right": [
+              "PMA1Mfn"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "RPS27B",
+              "Mfn",
+              "PMA1"
+            ],
+            "rate": "3.81"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Mfn",
+          "PMA1",
+          "PMA1Mfn",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\nRPS16B ->  @ k0;\nPMA1 + Mfn -> PMA1Mfn @ k1;\nCaN -> RPS27B + Mfn + PMA1 @ 3.81;\nMfn ->  @ k2;\nPMA1 ->  @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B materializes from the reaction medium. RPS16B is produced from RPS27B.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\n -> RPS16B @ k0;\nRPS27B -> RPS16B @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The enymatic reaction from RPS16B to Mfn with a rate of 1.47 is catalyzed by ENO2. Furthermore, RPS16B and Mfn are converted to Mfn and Fis1 at a rate of 4.91. Mfn, ENO2, and Fis1 are destroyed. The enymatic reaction from Mfn to Fis1 with a rate of 4.03 is catalyzed by RPS16B.",
+        "reactions": [
+          {
+            "left": [
+              "RPS16B",
+              "ENO2"
+            ],
+            "right": [
+              "Mfn",
+              "ENO2"
+            ],
+            "rate": "1.47"
+          },
+          {
+            "left": [
+              "RPS16B",
+              "Mfn"
+            ],
+            "right": [
+              "Mfn",
+              "Fis1"
+            ],
+            "rate": "4.91"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Mfn",
+              "RPS16B"
+            ],
+            "right": [
+              "Fis1",
+              "RPS16B"
+            ],
+            "rate": "4.03"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Mfn",
+          "RPS16B"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nRPS16B + ENO2 -> Mfn + ENO2 @ 1.47;\nRPS16B + Mfn -> Mfn + Fis1 @ 4.91;\nMfn ->  @ k0;\nENO2 ->  @ k1;\nFis1 ->  @ k2;\nMfn + RPS16B -> Fis1 + RPS16B @ 4.03;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN enters the system. It is produced at a rate of 5.81. In addition, CaN and Fis1 bind forming the complex CaNFis1. ENO2 are transformed to Mfn using CaN as a catalyst.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "5.81"
+          },
+          {
+            "left": [
+              "CaN",
+              "Fis1"
+            ],
+            "right": [
+              "CaNFis1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2",
+              "CaN"
+            ],
+            "right": [
+              "Mfn",
+              "CaN"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "CaNFis1",
+          "ENO2",
+          "Fis1",
+          "Mfn"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\n -> CaN @ 5.81;\nCaN + Fis1 -> CaNFis1 @ k0;\nENO2 + CaN -> Mfn + CaN @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Two PMA1 and RPS16B are generated from PMA1. Mfn decays.",
+        "reactions": [
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "2PMA1",
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\nPMA1 -> 2PMA1 + RPS16B @ k0;\nMfn ->  @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 is generated from CaN through the intermediates PMA1. Two RPS27B are converted to PMA1 and Fis1 at a rate of 4.87. PMA1 is generated from RPS27B through the intermediates Fis1, ENO2, and CaN.",
+        "reactions": [
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "2RPS27B"
+            ],
+            "right": [
+              "PMA1",
+              "Fis1"
+            ],
+            "rate": "4.87"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k4"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k5"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Fis1",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 7,
+        "domain": "bio",
+        "output": "```\nCaN -> PMA1 @ k0;\nPMA1 -> ENO2 @ k1;\n2RPS27B -> PMA1 + Fis1 @ 4.87;\nRPS27B -> Fis1 @ k2;\nFis1 -> ENO2 @ k3;\nENO2 -> CaN @ k4;\nCaN -> PMA1 @ k5;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The reaction from ENO2 to RPS16B is catalyzed by the enzyme Mfn. RPS16B and Mfn diminish.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2",
+              "Mfn"
+            ],
+            "right": [
+              "RPS16B",
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Mfn",
+          "RPS16B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nENO2 + Mfn -> RPS16B + Mfn @ k0;\nRPS16B ->  @ k1;\nMfn ->  @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS16B emerges from a reaction with rate 3.14. Furthermore, PMA1 is eradicated. Fis1 materializes from the reaction medium. Fis1 degrades. It leaves the system with a rate of 8.43.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "3.14"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "8.43"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> RPS16B @ 3.14;\nPMA1 ->  @ k0;\n -> Fis1 @ k1;\nFis1 ->  @ 8.43;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. The molecules Fis1 and Mfn are converted to PMA1 and RPS27B at a rate of 1.25. Fis1, PMA1, and Mfn can enter the system. Moreover, RPS27B and Fis1 bind forming the complex RPS27BFis1. Mfn enters the system. It is produced at a rate of 0.14.",
+        "reactions": [
+          {
+            "left": [
+              "Fis1",
+              "Mfn"
+            ],
+            "right": [
+              "PMA1",
+              "RPS27B"
+            ],
+            "rate": "1.25"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B",
+              "Fis1"
+            ],
+            "right": [
+              "RPS27BFis1"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "0.14"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "Mfn",
+          "PMA1",
+          "RPS27B",
+          "RPS27BFis1"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nFis1 + Mfn -> PMA1 + RPS27B @ 1.25;\n -> Fis1 @ k0;\n -> PMA1 @ k1;\n -> Mfn @ k2;\nRPS27B + Fis1 -> RPS27BFis1 @ k3;\n -> Mfn @ 0.14;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Fis1 and PMA1 degrade. Fis1 and RPS27B bind forming the complex Fis1RPS27B. RPS27B materializes from the reaction medium at a rate of 6.86.",
+        "reactions": [
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Fis1",
+              "RPS27B"
+            ],
+            "right": [
+              "Fis1RPS27B"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "6.86"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "Fis1RPS27B",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nFis1 ->  @ k0;\nPMA1 ->  @ k1;\nFis1 + RPS27B -> Fis1RPS27B @ k2;\n -> RPS27B @ 6.86;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. A chain of reactions occurs from RPS27B through RPS16B to finally form ENO2. RPS16B and RPS27B bind forming the complex RPS16BRPS27B at a rate of 2.93.",
+        "reactions": [
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B",
+              "RPS27B"
+            ],
+            "right": [
+              "RPS16BRPS27B"
+            ],
+            "rate": "2.93"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "RPS16B",
+          "RPS16BRPS27B",
+          "RPS27B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nRPS27B -> RPS16B @ k0;\nRPS16B -> ENO2 @ k1;\nRPS16B + RPS27B -> RPS16BRPS27B @ 2.93;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. A chain of reactions occurs from ENO2 through RPS16B to finally form Fis1. Two Fis1 bind forming the complex Fis1Fis1 at a rate of 6.68.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "2Fis1"
+            ],
+            "right": [
+              "Fis1Fis1"
+            ],
+            "rate": "6.68"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Fis1Fis1",
+          "RPS16B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nENO2 -> RPS16B @ k0;\nRPS16B -> Fis1 @ k1;\n2Fis1 -> Fis1Fis1 @ 6.68;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn and PMA1 can enter the system. RPS27B and Mfn degrade. PMA1 materializes from the reaction medium.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "k3"
+          },
+          {
+            "left": [],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k4"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "PMA1",
+          "RPS27B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\n -> Mfn @ k0;\n -> PMA1 @ k1;\nRPS27B ->  @ k2;\nMfn ->  @ k3;\n -> PMA1 @ k4;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn is eradicated. It leaves the system with a rate of 7.16. RPS16B and RPS27B are converted to Mfn and RPS16B at a rate of 8.04. Mfn and PMA1 bind forming the complex MfnPMA1.",
+        "reactions": [
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "7.16"
+          },
+          {
+            "left": [
+              "RPS16B",
+              "RPS27B"
+            ],
+            "right": [
+              "Mfn",
+              "RPS16B"
+            ],
+            "rate": "8.04"
+          },
+          {
+            "left": [
+              "Mfn",
+              "PMA1"
+            ],
+            "right": [
+              "MfnPMA1"
+            ],
+            "rate": "k0"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "MfnPMA1",
+          "PMA1",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nMfn ->  @ 7.16;\nRPS16B + RPS27B -> Mfn + RPS16B @ 8.04;\nMfn + PMA1 -> MfnPMA1 @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 and RPS27B form ENO2RPS27B with a rate of 6.24. ENO2 is eradicated. It leaves the system with a rate of 0.76. Also, ENO2 and CaN can enter the system. A chain of reactions occurs from CaN through ENO2 to finally form RPS27B.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2",
+              "RPS27B"
+            ],
+            "right": [
+              "ENO2RPS27B"
+            ],
+            "rate": "6.24"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "0.76"
+          },
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "ENO2RPS27B",
+          "RPS27B"
+        ],
+        "num_reactions": 6,
+        "domain": "bio",
+        "output": "```\nENO2 + RPS27B -> ENO2RPS27B @ 6.24;\nENO2 ->  @ 0.76;\n -> ENO2 @ k0;\n -> CaN @ k1;\nCaN -> ENO2 @ k2;\nENO2 -> RPS27B @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 and CaN bind forming the complex ENO2CaN. CaN is eradicated. A chain of reactions occurs from Fis1 through ENO2 to finally form PMA1.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2",
+              "CaN"
+            ],
+            "right": [
+              "ENO2CaN"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k3"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "ENO2CaN",
+          "Fis1",
+          "PMA1"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nENO2 + CaN -> ENO2CaN @ k0;\nCaN ->  @ k1;\nFis1 -> ENO2 @ k2;\nENO2 -> PMA1 @ k3;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Two RPS16B bind forming the complex RPS16BRPS16B. PMA1 is generated from Mfn through the intermediates RPS16B. The enzyme PMA1 promotes a reaction with rate 7.73 from RPS16B to Mfn. Mfn and RPS16B form MfnRPS16B with a rate of 9.04.",
+        "reactions": [
+          {
+            "left": [
+              "2RPS16B"
+            ],
+            "right": [
+              "RPS16BRPS16B"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "PMA1"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS16B",
+              "PMA1"
+            ],
+            "right": [
+              "Mfn",
+              "PMA1"
+            ],
+            "rate": "7.73"
+          },
+          {
+            "left": [
+              "Mfn",
+              "RPS16B"
+            ],
+            "right": [
+              "MfnRPS16B"
+            ],
+            "rate": "9.04"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "MfnRPS16B",
+          "PMA1",
+          "RPS16B",
+          "RPS16BRPS16B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\n2RPS16B -> RPS16BRPS16B @ k0;\nMfn -> RPS16B @ k1;\nRPS16B -> PMA1 @ k2;\nRPS16B + PMA1 -> Mfn + PMA1 @ 7.73;\nMfn + RPS16B -> MfnRPS16B @ 9.04;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. PMA1 and Fis1 bind forming the complex PMA1Fis1. Fis1 is generated from ENO2 through the intermediates RPS16B.",
+        "reactions": [
+          {
+            "left": [
+              "PMA1",
+              "Fis1"
+            ],
+            "right": [
+              "PMA1Fis1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [
+              "RPS16B"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k2"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "PMA1",
+          "PMA1Fis1",
+          "RPS16B"
+        ],
+        "num_reactions": 3,
+        "domain": "bio",
+        "output": "```\nPMA1 + Fis1 -> PMA1Fis1 @ k0;\nENO2 -> RPS16B @ k1;\nRPS16B -> Fis1 @ k2;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn and Fis1 materialize from the reaction medium. Further, the reaction from Mfn to Fis1 is catalyzed by the enzyme PMA1. Furthermore, Fis1 is produced from PMA1. Mfn decays. It leaves the system with a rate of 7.5.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Mfn",
+              "PMA1"
+            ],
+            "right": [
+              "Fis1",
+              "PMA1"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "Fis1"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "7.5"
+          }
+        ],
+        "entities": [
+          "Fis1",
+          "Mfn",
+          "PMA1"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\n -> Mfn @ k0;\n -> Fis1 @ k1;\nMfn + PMA1 -> Fis1 + PMA1 @ k2;\nPMA1 -> Fis1 @ k3;\nMfn ->  @ 7.5;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. RPS27B enters the system. It is produced at a rate of 4.19. CaN, ENO2, and Mfn are produced from RPS16B at a rate of 7.28.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "RPS27B"
+            ],
+            "rate": "4.19"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [
+              "CaN",
+              "ENO2",
+              "Mfn"
+            ],
+            "rate": "7.28"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 2,
+        "domain": "bio",
+        "output": "```\n -> RPS27B @ 4.19;\nRPS16B -> CaN + ENO2 + Mfn @ 7.28;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. CaN is eradicated. It leaves the system with a rate of 8.37. In addition, Mfn and Fis1 bind forming the complex MfnFis1. Furthermore, Fis1 is consumed with a rate of 2.13. The species CaN and Mfn undergo a conversion leading to RPS27B and Mfn.",
+        "reactions": [
+          {
+            "left": [
+              "CaN"
+            ],
+            "right": [],
+            "rate": "8.37"
+          },
+          {
+            "left": [
+              "Mfn",
+              "Fis1"
+            ],
+            "right": [
+              "MfnFis1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [],
+            "rate": "2.13"
+          },
+          {
+            "left": [
+              "CaN",
+              "Mfn"
+            ],
+            "right": [
+              "RPS27B",
+              "Mfn"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "Fis1",
+          "Mfn",
+          "MfnFis1",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nCaN ->  @ 8.37;\nMfn + Fis1 -> MfnFis1 @ k0;\nFis1 ->  @ 2.13;\nCaN + Mfn -> RPS27B + Mfn @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. ENO2 is eradicated. It leaves the system with a rate of 6.29. Furthermore, Fis1 are transformed to ENO2 using Mfn as a catalyst. Furthermore, ENO2 materializes from the reaction medium at a rate of 4.26. ENO2 and RPS27B are generated from Fis1.",
+        "reactions": [
+          {
+            "left": [
+              "ENO2"
+            ],
+            "right": [],
+            "rate": "6.29"
+          },
+          {
+            "left": [
+              "Fis1",
+              "Mfn"
+            ],
+            "right": [
+              "ENO2",
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "4.26"
+          },
+          {
+            "left": [
+              "Fis1"
+            ],
+            "right": [
+              "ENO2",
+              "RPS27B"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "ENO2",
+          "Fis1",
+          "Mfn",
+          "RPS27B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\nENO2 ->  @ 6.29;\nFis1 + Mfn -> ENO2 + Mfn @ k0;\n -> ENO2 @ 4.26;\nFis1 -> ENO2 + RPS27B @ k1;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn and ENO2 can enter the system. Moreover, two CaN are formed by conversion from Mfn and RPS16B. RPS27B are transformed to RPS16B using CaN as a catalyst. RPS27B degrades. It leaves the system with a rate of 8.62.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [
+              "Mfn",
+              "RPS16B"
+            ],
+            "right": [
+              "2CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "RPS27B",
+              "CaN"
+            ],
+            "right": [
+              "RPS16B",
+              "CaN"
+            ],
+            "rate": "k3"
+          },
+          {
+            "left": [
+              "RPS27B"
+            ],
+            "right": [],
+            "rate": "8.62"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn",
+          "RPS16B",
+          "RPS27B"
+        ],
+        "num_reactions": 5,
+        "domain": "bio",
+        "output": "```\n -> Mfn @ k0;\n -> ENO2 @ k1;\nMfn + RPS16B -> 2CaN @ k2;\nRPS27B + CaN -> RPS16B + CaN @ k3;\nRPS27B ->  @ 8.62;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Mfn, ENO2, and CaN materialize from the reaction medium. Mfn degrades with a rate of 9.93.",
+        "reactions": [
+          {
+            "left": [],
+            "right": [
+              "Mfn"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": [
+              "ENO2"
+            ],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": [
+              "CaN"
+            ],
+            "rate": "k2"
+          },
+          {
+            "left": [
+              "Mfn"
+            ],
+            "right": [],
+            "rate": "9.93"
+          }
+        ],
+        "entities": [
+          "CaN",
+          "ENO2",
+          "Mfn"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n -> Mfn @ k0;\n -> ENO2 @ k1;\n -> CaN @ k2;\nMfn ->  @ 9.93;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "The following describes a reaction system. Please translate to a formal description. Two Mfn form MfnMfn with a rate of 5.78. Also, PMA1 undergoes a reaction resulting in three PMA1. Furthermore, RPS16B is eradicated. It leaves the system with a rate of 6.01. The reaction from PMA1 to RPS16B is catalyzed by the enzyme Mfn.",
+        "reactions": [
+          {
+            "left": [
+              "2Mfn"
+            ],
+            "right": [
+              "MfnMfn"
+            ],
+            "rate": "5.78"
+          },
+          {
+            "left": [
+              "PMA1"
+            ],
+            "right": [
+              "3PMA1"
+            ],
+            "rate": "k0"
+          },
+          {
+            "left": [
+              "RPS16B"
+            ],
+            "right": [],
+            "rate": "6.01"
+          },
+          {
+            "left": [
+              "PMA1",
+              "Mfn"
+            ],
+            "right": [
+              "RPS16B",
+              "Mfn"
+            ],
+            "rate": "k1"
+          }
+        ],
+        "entities": [
+          "Mfn",
+          "MfnMfn",
+          "PMA1",
+          "RPS16B"
+        ],
+        "num_reactions": 4,
+        "domain": "bio",
+        "output": "```\n2Mfn -> MfnMfn @ 5.78;\nPMA1 -> 3PMA1 @ k0;\nRPS16B ->  @ 6.01;\nPMA1 + Mfn -> RPS16B + Mfn @ k1;\n```"
+      }
+    ]
+  ]
+}

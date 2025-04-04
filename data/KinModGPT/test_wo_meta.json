@@ -1,0 +1,446 @@
+{
+  "metadata": {},
+  "samples": [
+    [
+      {
+        "instruction": "Protein P decays. The initial concentration is 1 uM.",
+        "reactions": [
+            {
+                "left": [
+                    "P"
+                ],
+                "right": [],
+                "rate": "k0"
+            }
+        ],
+        "entities": [
+            "P"
+        ],
+        "num_reactions": 1,
+        "domain": "bio",
+        "output": "```\nP -> @ k0;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "Molecules of M bind to form E, and E dissociates back into two Ms. Additionally, E and S can bind to form ES, which then dissociates back into E and S, while E and P can bind to form EP, which dissociates back into E and P. Furthermore, ES can be converted into E and P. E and I can also bind to form EI, which dissociates back into E and I. Finally, EI is converted into EJ.",
+        "reactions": [
+          {
+            "left": ["M", "M"],
+            "right": ["E"],
+            "rate": "k0"
+          },
+          {
+            "left": ["E"],
+            "right": ["2M"],
+            "rate": "k1"
+          },
+          {
+            "left": ["E", "S"],
+            "right": ["ES"],
+            "rate": "k2"
+          },
+          {
+            "left": ["ES"],
+            "right": ["E", "S"],
+            "rate": "k3"
+          },
+          {
+            "left": ["E", "P"],
+            "right": ["EP"],
+            "rate": "k4"
+          },
+          {
+            "left": ["EP"],
+            "right": ["E", "P"],
+            "rate": "k5"
+          },
+          {
+            "left": ["ES"],
+            "right": ["E", "P"],
+            "rate": "k6"
+          },
+          {
+            "left": ["E", "I"],
+            "right": ["EI"],
+            "rate": "k7"
+          },
+          {
+            "left": ["EI"],
+            "right": ["E", "I"],
+            "rate": "k8"
+          },
+          {
+            "left": ["EI"],
+            "right": ["EJ"],
+            "rate": "k9"
+          }
+        ],
+        "entities": ["M", "E", "S", "ES", "P", "EP", "I", "EI", "EJ"],
+        "num_reactions": 10,
+        "domain": "bio",
+        "output": "```\nM + M -> E @ k0;\nE -> 2M @ k1;\nE + S -> ES @ k2;\nES -> E + S @ k3;\nE + P -> EP @ k4;\nEP -> E + P @ k5;\nES -> E + P @ k6;\nE + I -> EI @ k7;\nEI -> E + I @ k8;\nEI -> EJ @ k9;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "Substrate S is converted into product P through intermediates M1 and M2. The metabolic reactions are catalyzed by three enzymes, E1, E2, and E3. The expression of mRNAs G1, G2, and G3 is repressed by the metabolites M1, M2, and P, respectively. The proteins E1, E2, and E3 are translated from G1, G2, and G3, respectively. E1, E2, E3, G1, G2, and G3 degrade. The initial concentration of S is 1.",
+        "reactions": [
+          {
+            "left": ["S", "E1"],
+            "right": ["M1", "E1"],
+            "rate": "k0"
+          },
+          {
+            "left": ["M1", "E2"],
+            "right": ["M2", "E2"],
+            "rate": "k1"
+          },
+          {
+            "left": ["M2", "E3"],
+            "right": ["P", "E3"],
+            "rate": "k2"
+          },
+          {
+            "left": ["M1"],
+            "right": ["G1", "M1"],
+            "rate": "k3"
+          },
+          {
+            "left": ["M2"],
+            "right": ["G2", "M2"],
+            "rate": "k4"
+          },
+          {
+            "left": ["P"],
+            "right": ["G3", "P"],
+            "rate": "k5"
+          },
+          {
+            "left": ["E1"],
+            "right": [],
+            "rate": "k6"
+          },
+          {
+            "left": ["E2"],
+            "right": [],
+            "rate": "k7"
+          },
+          {
+            "left": ["E3"],
+            "right": [],
+            "rate": "k8"
+          },
+          {
+            "left": ["G1"],
+            "right": [],
+            "rate": "k9"
+          },
+          {
+            "left": ["G2"],
+            "right": [],
+            "rate": "k10"
+          },
+          {
+            "left": ["G3"],
+            "right": [],
+            "rate": "k11"
+          },
+          {
+            "left": ["G1"],
+            "right": ["E1"],
+            "rate": "k12"
+          },
+          {
+            "left": ["G2"],
+            "right": ["E2"],
+            "rate": "k13"
+          },
+          {
+            "left": ["G3"],
+            "right": ["E3"],
+            "rate": "k14"
+          }
+        ],
+        "entities": ["S", "E1", "E2", "E3", "P", "M1", "M2", "M3", "G1", "G2", "G3"],
+        "num_reactions": 15,
+        "domain": "bio",
+        "output": "```\nS + E1 -> M1 + E1 @ k0;\nM1 + E2 -> M2 + E2 @ k1;\nM2 + E3 -> P + E3 @ k2;\n M1 -> G1 + M1 @ k3;\n M2 -> G2 + M2 @ k4;\n P -> G3 + P @k5;\nE1 -> @ k6;\nE2 -> @ k7;\nE3 -> @ k8;\nG1 -> @ k9;\nG2 -> @ k10;\nG3 -> @ k11;\nG1 -> E1 @ k12;\nG2 -> E2 @ k13;\nG3 -> E3 @ k14;"
+      }
+    ],
+    [
+      {
+        "instruction": "s70 and RNA polymerase (RNAP) bind together to form s70_RNAP, which then dissociates into s70 and RNAP. Pg and s70_RNAP bind to create Pg_s70_RNAP, which can dissociate back into its components. RNAP and s32 bind to create RNAP_s32, which can dissociate into RNAP and s32. Ph and RNAP_s32 bind to form Ph_RNAP_s32, which then dissociates back into Ph and RNAP_s32. Additionally, s32 and DnaK form s32_DnaK, which can dissociate into s32 and DnaK, while s32 and FtsH bind to create s32_FtsH, which can dissociate back into s32 and FtsH. Similarly, Punfold and DnaK bind to form Punfold_DnaK, which can dissociate into Punfold and DnaK. D and s70_RNAP bind to form D_s70_RNAP, which can dissociate into D and s70_RNAP, and D and RNAP_s32 bind to form D_RNAP_s32, which can dissociate into D and RNAP_s32. RNAP and D bind to form RNAP_D, and RNAP_D can dissociate into RNAP and D. s32_DnaK and FtsH bind to form s32_DnaK_FtsH, which then dissociates into s32_DnaK and FtsH. s32_FtsH is converted into FtsH, while s32_DnaK_FtsH is converted into DnaK and FtsH. Similarly, Pfold is converted into Punfold, while Punfold_DnaK is converted into Pfold and DnaK.",
+        "reactions": [
+          {
+            "left": ["s70", "RNAP"],
+            "right": ["s70_RNAP"],
+            "rate": "k0"
+          },
+          {
+            "left": ["s70_RNAP"],
+            "right": ["s70", "RNAP"],
+            "rate": "k1"
+          },
+          {
+            "left": ["Pg", "s70_RNAP"],
+            "right": ["Pg_s70_RNAP"],
+            "rate": "k2"
+          },
+          {
+            "left": ["Pg_s70_RNAP"],
+            "right": ["Pg", "s70_RNAP"],
+            "rate": "k3"
+          },
+          {
+            "left": ["RNAP", "s32"],
+            "right": ["RNAP_s32"],
+            "rate": "k4"
+          },
+          {
+            "left": ["RNAP_s32"],
+            "right": ["RNAP", "s32"],
+            "rate": "k5"
+          },
+
+          {
+            "left": ["Ph", "RNAP_s32"],
+            "right": ["Ph_RNAP_s32"],
+            "rate": "k6"
+          },
+          {
+            "left": ["Ph_RNAP_s32"],
+            "right": ["Ph", "RNAP_s32"],
+            "rate": "k7"
+          },
+          {
+            "left": ["s32", "DnaK"],
+            "right": ["s32_DnaK"],
+            "rate": "k8"
+          },
+          {
+            "left": ["s32_DnaK"],
+            "right": ["s32", "DnaK"],
+            "rate": "k9"
+          },
+          {
+            "left": ["s32", "FtsH"],
+            "right": ["s32_FtsH"],
+            "rate": "k10"
+          },
+          {
+            "left": ["s32_FtsH"],
+            "right": ["s32", "FtsH"],
+            "rate": "k11"
+          },
+          {
+            "left": ["Punfold", "DnaK"],
+            "right": ["Punfold_DnaK"],
+            "rate": "k12"
+          },
+          {
+            "left": ["Punfold_DnaK"],
+            "right": ["Punfold", "DnaK"],
+            "rate": "k13"
+          },
+          {
+            "left": ["D", "s70_RNAP"],
+            "right": ["D_s70_RNAP"],
+            "rate": "k14"
+          },
+          {
+            "left": ["D_s70_RNAP"],
+            "right": ["D", "s70_RNAP"],
+            "rate": "k15"
+          },
+          {
+            "left": ["D", "RNAP_s32"],
+            "right": ["D_RNAP_s32"],
+            "rate": "k16"
+          },
+          {
+            "left": ["D_RNAP_s32"],
+            "right": ["D", "RNAP_s32"],
+            "rate": "k17"
+          },
+          {
+            "left": ["RNAP", "D"],
+            "right": ["RNAP_D"],
+            "rate": "k18"
+          },
+          {
+            "left": ["RNAP_D"],
+            "right": ["RNAP", "D"],
+            "rate": "k19"
+          },
+          {
+            "left": ["s32_DnaK", "FtsH"],
+            "right": ["s32_DnaK_FtsH"],
+            "rate": "k20"
+          },
+          {
+            "left": ["s32_DnaK_FtsH"],
+            "right": ["s32_DnaK", "FtsH"],
+            "rate": "k21"
+          },
+          {
+            "left": ["s32_FtsH"],
+            "right": ["FtsH"],
+            "rate": "k22"
+          },
+          {
+            "left": ["s32_DnaK_FtsH"],
+            "right": ["DnaK", "FtsH"],
+            "rate": "k23"
+          },
+          {
+            "left": ["Pfold"],
+            "right": ["Punfold"],
+            "rate": "k24"
+          },
+          {
+            "left": ["Pnfold_DnaK"],
+            "right": ["Pfold", "DnaK"],
+            "rate": "k25"
+          }
+        ],
+        "entities": ["s70", "s70_RNAP", "Pg", "Pg_s70_RNAP", "RNAP", "s32", "RNAP_s32", "Ph", "Ph_RNAP_s32", "DnaK", "FtsH", "s32_DnaK", "s32_FtsH", "Punfold", "DnaK", "Punfold_DnaK", "D", "D_RNAP_s32", "s32_DnaK_FtsH", "Pfold"],
+        "num_reactions": 26,
+        "domain": "bio",
+        "output": "```\ns70 + RNAP -> s70_RNAP @ k0;\ns70_RNAP -> s70 + RNAP @ k1;\nPg + s70_RNAP -> Pg_s70_RNAP @ k2;\nPg_s70_RNAP -> Pg + s70_RNAP @ k3;\nRNAP + s32 -> RNAP_s32 @ k4;\nRNAP_s32 -> RNAP + s32 @ k5;\nPh + RNAP_s32 -> Ph_RNAP_s32 @ k6;\nPh_RNAP_s32 -> Ph + RNAP_s32 @ k7;\ns32 + DnaK -> s32_DnaK @ k8;\ns32_DnaK -> s32 + DnaK @ k9;\ns32 + FtsH -> s32_FtsH @ k10;\ns32_FtsH -> s32 + FtsH @ k11;\nPunfold + DnaK -> Punfold_DnaK @ k12;\nPunfold_DnaK -> Punfold + DnaK @ k13;\nD + s70_RNAP -> D_s70_RNAP @ k14;\nD_s70_RNAP -> D + s70_RNAP @ k15;\nD + RNAP_s32 -> D_RNAP_s32 @ k16;\nD_RNAP_s32 -> D + RNAP_s32 @ k17;\nRNAP + D -> RNAP_D @ k18;\nRNAP_D -> RNAP + D @ k19;\ns32_DnaK + FtsH -> s32_DnaK_FtsH @ k20;\ns32_DnaK_FtsH -> s32_DnaK + FtsH @ k21;\ns32_FtsH -> FtsH @ k22;\ns32_DnaK_FtsH -> DnaK + FtsH @ k23;\nPfold -> Punfold @ k24;\nPunfold_DnaK -> Pfold + DnaK @ k25;\n```"
+      }
+    ],
+    [
+      {
+        "instruction": "mRNA_s32 is upregurated by Pg_s70_RNAP. Similarly, mRNA_DnaK and mRNA_FtsH are positively regulated by Ph_RNAP_s32. mRNA_Protein is transcribed without regulation. s32, FtsH, DnaK, and Pfold are translated from mRNA_s32, mRNA_FtsH, mRNA_DnaK, and mRNA_Protein, respectively. All the mRNAs (mRNA_s32, mRNA_DnaK, mRNA_FtsH, and mRNA_Protein) decay. s32, s32_DnaK, s32_FtsH, s32_DnaK_FtsH, FtsH, DnaK, Punfold_DnaK, Pfold, and Punfold decay. RNAP_s32 is degraded into RNAP. Similarly, Ph_RNAP_s32 is degraded into Ph and RNAP. D_RNAP_s32 is degraded into RNAP_D.",
+        "reactions": [
+          {
+            "left": [],
+            "right": ["mRNA_s32"],
+            "rate": "k0"
+          },
+          {
+            "left": [],
+            "right": ["mRNA_DnaK"],
+            "rate": "k1"
+          },
+          {
+            "left": [],
+            "right": ["mRNA_FtsH"],
+            "rate": "k2"
+          },
+          {
+            "left": [],
+            "right": ["mRNA_Protein"],
+            "rate": "k3"
+          },
+          {
+            "left": [],
+            "right": ["s32"],
+            "rate": "k4"
+          },
+          {
+            "left": [],
+            "right": ["FtsH"],
+            "rate": "k5"
+          },
+
+          {
+            "left": [],
+            "right": ["DnaK"],
+            "rate": "k6"
+          },
+          {
+            "left": [],
+            "right": ["Pfold"],
+            "rate": "k7"
+          },
+          {
+            "left": ["mRNA_s32"],
+            "right": [],
+            "rate": "k8"
+          },
+          {
+            "left": ["mRNA_DnaK"],
+            "right": [],
+            "rate": "k9"
+          },
+          {
+            "left": ["mRNA_FtsH"],
+            "right": [],
+            "rate": "k10"
+          },
+          {
+            "left": ["mRNA_Protein"],
+            "right": [],
+            "rate": "k11"
+          },
+          {
+            "left": ["s32"],
+            "right": [],
+            "rate": "k12"
+          },
+          {
+            "left": ["s32_DnaK"],
+            "right": [],
+            "rate": "k13"
+          },
+          {
+            "left": ["s32_FtsH"],
+            "right": [],
+            "rate": "k14"
+          },
+          {
+            "left": ["s32_DnaK_FtsH"],
+            "right": [],
+            "rate": "k15"
+          },
+          {
+            "left": ["FtsH"],
+            "right": [],
+            "rate": "k16"
+          },
+          {
+            "left": ["DnaK"],
+            "right": [],
+            "rate": "k17"
+          },
+          {
+            "left": ["Punfold_DnaK"],
+            "right": [],
+            "rate": "k18"
+          },
+          {
+            "left": ["Pfold"],
+            "right": [],
+            "rate": "k19"
+          },
+          {
+            "left": ["Punfold"],
+            "right": [],
+            "rate": "k20"
+          },
+          {
+            "left": ["RNAP_s32"],
+            "right": ["RNAP"],
+            "rate": "k21"
+          },
+          {
+            "left": ["Ph_RNAP_s32"],
+            "right": ["Ph", "RNAP"],
+            "rate": "k22"
+          },
+          {
+            "left": ["D_RNAP_s32"],
+            "right": ["RNAP_D"],
+            "rate": "k23"
+          }
+        ],
+        "entities": ["mRNA_s32", "mRNA_DnaK", "mRNA_FtsH", "mRNA_Protein", "s32", "FtsH", "DnaK", "Pfold", "s32_DnaK", "s32_FtsH", "s32_DnaK_FtsH", "Punfold_DnaK", "RNAP_s32", "Ph_RNAP_s32", "D_RNAP_s32", "Ph", "RNAP", "RNAP_D"],
+        "num_reactions": 24,
+        "domain": "bio",
+        "output": "```\n -> mRNA_s32 @ k0;\n -> mRNA_DnaK @ k1;\n -> mRNA_FtsH @ k2;\n -> mRNA_Protein @ k3;\n -> s32 @ k4;\n -> FtsH @ k5;\n -> DnaK @ k6;\n -> Pfold @ k7;\nmRNA_s32 -> @ k8;\nmRNA_DnaK -> @ k9;\nmRNA_FtsH -> @ k10;\nmRNA_Protein -> @ k11;\ns32 -> @ k12;\ns32_DnaK -> @ k13;\ns32_FtsH -> @ k14;\ns32_DnaK_FtsH -> @ k15;\nFtsH -> @ k16;\nDnaK -> @ k17;\nPunfold_DnaK -> @ k18;\nPfold -> @ k19;\nPunfold -> @ k20;\nRNAP_s32 -> RNAP @ k21;\nPh_RNAP_s32 -> Ph + RNAP @ k22;\nD_RNAP_s32 -> RNAP_D @ k23;\n```"
+      }
+    ]
+  ]
+}

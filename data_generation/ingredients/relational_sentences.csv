@@ -1,0 +1,51 @@
+domain,category,nreactants,nproducts,text
+bio,general,-1,-1,The previous reaction occurs at a rate of {rate}.
+bio,general,-1,-1,The previous reaction occurs with a rate of {rate}.
+bio,general,-1,-1,This happens with rate {rate}.
+bio,general,-1,-1,This happens at rate {rate}.
+bio,degradation,-1,0,The rate of {reactants} degradation is {rate}.
+bio,degradation,-1,0,The rate of degradation is {rate}.
+bio,degradation,1,0,It leaves the system at a rate of {rate}.
+bio,degradation,1,0,It leaves the system with a rate of {rate}.
+bio,degradation,1,0,It is consumed at a rate of {rate}.
+bio,degradation,1,0,It is consumed with a rate of {rate}.
+bio,degradation,1,0,The {reactants} is consumed with a rate of {rate}.
+bio,production,-1,0,The rate of {products} production is {rate}..
+bio,production,-1,0,The rate of production is {rate}..
+bio,production,0,1,It enters the system at a rate of {rate}.
+bio,production,0,1,It enters the system with a rate of {rate}.
+bio,production,0,1,It is produced at a rate of {rate}.
+bio,production,0,1,It is produced with a rate of {rate}.
+bio,production,0,1,The {products} is produced with a rate of {rate}.
+eco,general,-1,-1,The previous reaction occurs at a rate of {rate}.
+eco,general,-1,-1,The previous reaction occurs with a rate of {rate}.
+eco,general,-1,-1,This happens with rate {rate}.
+eco,general,-1,-1,This happens at rate {rate}.
+eco,production,0,1,They are born with a rate of {rate}.
+eco,production,0,1,{products} are born with a rate of {rate}.
+eco,production,0,1,{products} enter the system with a rate of {rate}.
+eco,production,0,1,They enter the system with a rate of {rate}.
+eco,production,0,1,The rate of {products} entering the system is {rate}.
+eco,production,0,1,Their birth rate is {rate}.
+eco,degradation,1,0,They die with a rate of {rate}.
+eco,degradation,1,0,{reactants} die with a rate of {rate}.
+eco,degradation,1,0,{reactants} leave the system with a rate of {rate}.
+eco,degradation,1,0,They leave the system with a rate of {rate}.
+eco,degradation,1,0,The rate of {reactants} leaving the system is {rate}.
+eco,degradation,1,0,Their death rate is {rate}.
+epi,general,-1,-1,The previous reaction occurs at a rate of {rate}.
+epi,general,-1,-1,The previous reaction occurs with a rate of {rate}.
+epi,general,-1,-1,This happens with rate {rate}.
+epi,general,-1,-1,This happens at rate {rate}.
+epi,production,0,1,They are born with a rate of {rate}.
+epi,production,0,1,{products} are born with a rate of {rate}.
+epi,production,0,1,{products} enter the system with a rate of {rate}.
+epi,production,0,1,They enter the system with a rate of {rate}.
+epi,production,0,1,The rate of {products} entering the system is {rate}.
+epi,production,0,1,Their birth rate is {rate}.
+epi,degradation,1,0,They die with a rate of {rate}.
+epi,degradation,1,0,{reactants} die with a rate of {rate}.
+epi,degradation,1,0,{reactants} leave the system with a rate of {rate}.
+epi,degradation,1,0,They leave the system with a rate of {rate}.
+epi,degradation,1,0,The rate of {reactants} leaving the system is {rate}.
+epi,degradation,1,0,Their death rate is {rate}.
