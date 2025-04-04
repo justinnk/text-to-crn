@@ -14,7 +14,7 @@ Code artifacts for the paper "Using (Not so) Large Language Models for Generatin
 
 1. Clone the repository and move to the repository folder:
 ```shell
-git clone https://github.com/justinnk/text-to-crn
+git clone https://github.com/justinnk/text-to-crn.git
 cd text-to-crn
 ```
 2. Run the script `./check_and_install.sh` to check requirements and install the dependencies. After running this script, you may directly jump ahead to the reproduction if there were no errors.
@@ -54,7 +54,7 @@ This is the manual installation guide. If you used the quickstart script without
 
 1. Clone the repository and move to the repository folder:
 ```shell
-git clone https://github.com/justinnk/text-to-crn
+git clone https://github.com/justinnk/text-to-crn.git
 cd text-to-crn
 ```
 2. Create a virtual environment and install the dependencies
