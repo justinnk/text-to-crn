@@ -1,4 +1,4 @@
-[![DOI](ZENODO-BADGE)](DOI)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15198398.svg)](https://doi.org/10.5281/zenodo.15198398)
 # Using (Not so) Large Language Models for Generating Simulation Models in a Formal DSL -- A Study on Reaction Networks 
 
 Code artifacts for the paper "Using (Not so) Large Language Models for Generating Simulation Models in a Formal DSL -- A Study on Reaction Networks" to be published in TOMACS special issue for the PADS'25.
