@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15198398.svg)](https://doi.org/10.5281/zenodo.15198398)
-# Using (Not so) Large Language Models for Generating Simulation Models in a Formal DSL -- A Study on Reaction Networks 
+# Using (Not-so) Large Language Models to Generate Simulation Models in a Formal DSL: A Study on Reaction Networks
 
-Code artifacts for the paper "Using (Not so) Large Language Models for Generating Simulation Models in a Formal DSL -- A Study on Reaction Networks" to be published in TOMACS special issue for the PADS'25.
+Code artifacts for the paper "Using (Not-so) Large Language Models to Generate Simulation Models in a Formal DSL: A Study on Reaction Networks" just accepted to TOMACS special issue for the PADS'25.
 
 ## Authors and Contacts
 
@@ -214,7 +214,7 @@ Generally, the individual results in the above folders have the following form:
 ## :page_facing_up: Cite
 
 ```
-Kreikemeyer, Justin N., Miłosz Jankowski, Pia Wilsdorf, Adelinde M. Uhrmacher. 
-"Using (Not so) Large Language Models for Generating Simulation Models in a Formal DSL - A Study on Reaction Networks." 
-arXiv preprint arXiv:2503.01675 (2025).
+Justin Noah Kreikemeyer, Miłosz Jankowski, Pia Wilsdorf, and Adelinde M. Uhrmacher. 2025.
+Using (Not-so) Large Language Models to Generate Simulation Models in a Formal DSL: A Study on Reaction Networks.
+ACM Trans. Model. Comput. Simul. Just Accepted (May 2025). https://doi.org/10.1145/3733719
 ```
