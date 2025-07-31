@@ -19,7 +19,7 @@ cd text-to-crn
 ```
 2. Run the script `./check_and_install.sh` to check requirements and install the dependencies. After running this script, you may directly jump ahead to the reproduction if there were no errors.
 4. Consult the section "Reproduce Results" below (important!)
-3. Insert your Huggingface (see the first bullet in the section "Other Requirements") and OpenAI Keys at the top of `reproduce-all.sh` and the project id and organization id in `ChatGptAPI.py. Run the script (`./reproduce-all.sh`) to reproduce all results. If you chose to manually run experiments and the results are now all present in the results folder, you may run `./reproduce-all.sh manual`. The figures and tables will then be placed in the folder `reproduction` and labelled like the figures and tables in the paper.
+3. Insert your Huggingface (see the first bullet in the section "Other Requirements") and OpenAI Keys at the top of `reproduce-all.sh` and the project id and organization id in `ChatGptAPI.py`. Run the script (`./reproduce-all.sh`) to reproduce all results. If you chose to manually run experiments and the results are now all present in the results folder, you may run `./reproduce-all.sh manual`. The figures and tables will then be placed in the folder `reproduction` and labelled like the figures and tables in the paper.
 
 ## :cd: Setup
 
