@@ -19,7 +19,7 @@ cd text-to-crn
 ```
 2. Run the script `./check_and_install.sh` to check requirements and install the dependencies. After running this script, you may directly jump ahead to the reproduction if there were no errors.
 4. Consult the section "Reproduce Results" below (important!)
-3. Insert your Huggingface and OpenAI Keys at the top of `reproduce-all.sh` and the project and organization id in `ChatGptAPI.py` and run the script (`./reproduce-all.sh`) to reproduce all results. If you chose to manually run experiments and the results are now all present in the results folder, you may run `./reproduce-all.sh manual`. The figures and tables will then be placed in the folder `reproduction` and labelled like the figures and tables in the paper.
+3. Insert your Huggingface (see the first bullet in the section "Other Requirements") and OpenAI Keys at the top of `reproduce-all.sh` and the project id and organization id in `ChatGptAPI.py. Run the script (`./reproduce-all.sh`) to reproduce all results. If you chose to manually run experiments and the results are now all present in the results folder, you may run `./reproduce-all.sh manual`. The figures and tables will then be placed in the folder `reproduction` and labelled like the figures and tables in the paper.
 
 ## :cd: Setup
 
@@ -40,8 +40,8 @@ cd text-to-crn
 ### Other Requirements
 
 - A Huggingface Account
-  - Access to the gated repository of [Mistral 7B v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
-    - when logged in, this can be achieved by just clicking the button at the top of the page
+  - Access to the gated repositories of [Mistral 7B v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) and [Llama Instruct 8B v3.1](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
+    - when logged in, this can be achieved by just clicking the buttons at the top of the respective page
     - you then need to create an access token [here](https://huggingface.co/settings/tokens)
     - this needs to be provided to the reproduction script
 - For reproduction only: Download our trained Mistral LoRA from the [related Zenodo archive](https://doi.org/10.5281/zenodo.15145040), unzip, and place it in the `loras` folder.
@@ -133,8 +133,8 @@ This project is licensed under the MIT License contained in `LICENSE`, unless in
 ## :bar_chart: Reproduce Results
 
 These are the steps to reproduce the figures and claims in the paper.
-The steps assume that you are inside the virtual environment created before with the installation guide above (using `source .venv/bin/activate`, if not already done).
-We recommend using `tmux` or something similar to start a persistent terminal session when working on a remote server (highly recommended).
+If you are not using the automated reproduction script, the following steps assume that you are inside the virtual environment created before with the installation guide above (using `source .venv/bin/activate`, if not already done).
+In any case, we recommend using `tmux` or something similar to start a persistent terminal session when working on a remote server (highly recommended).
 This ensures that experiments are not interrupted.
 However, almost all experiments are designed in a way that they are automatically continued (and not re-run) if reinvoked in case they were interrupted.
 
@@ -145,10 +145,10 @@ Make sure you copy the results of all parallel sessions to the `results` folder 
 Especially the hyperparameter scan (experiment 2) over LoRAs will take a lot of time (around 3 days on our RTX3090Ti) and also space (around 600GB).
 The temperature scan (experiment 3) will take around 4 days.
 The reproducibility of the experiments involving ChatGpt is only possible using the OpenAI API and purchasing Tokens there. The estimated cost for this is ~40€ at the time of writing (if you are reproducing the results for the ACM reproducibility review, the authors will provide you with a funded API key).
-Please be careful to not re-execute the experiment scripts of 1, 3, and 4, as running these results in costs.
+Please be careful to not re-execute the experiment scripts of 1, 3, and 4 below, as running these results in costs.
 
 Finally, there has been an issue with setting the seed during training (learning: the seed has to be set *before* loading a model for training, as an internal random source is already initialized at this time. It is not sufficient to set a training seed.). Thus, it is now impossible to reproduce the exact LoRA trained for the paper. For this reason, we provide our weights which are used for exact reproduction of the figures. They are either automatically downloaded and installed using the quickstart script or you can follow the instructions given in the `loras` folder.
-The hyperparameter scan (experiment 2) still yields very similar results and a model of similar accuracy (which may then also be used to reproduce very similar results in all experiments based on this if desired). The seed for this is now also correclty set so that future reproductions yield the exact same table every time. Note that with the current seed, the highest model accuracy is a couple percent lower than the one we got in our experiments (81.5% with alpha 8 rank 16 dropout 0.5 vs. 84.5% with alpha 8 rank 8 dropout 0.3). This is however well within the range of values we observed and it should be easy (given sufficient time) to find a seed producing a more accurate model. It also supports our claim that the hyperparameters don't make a big difference, as the highest resulting LoRA with the current seed is trained with quite a different configuration than the one we identified.
+The hyperparameter scan (experiment 2) still yields very similar results and a model of similar accuracy (which may then also be used to reproduce very similar results in all experiments based on this if desired). The seed for this is now also correctly set so that future reproductions yield the exact same table every time. Note that with the current seed, the highest model accuracy is a couple percent lower than the one we got in our experiments (81.5% with alpha 8 rank 16 dropout 0.5 vs. 84.5% with alpha 8 rank 8 dropout 0.3). This is however well within the range of values we observed and it should be easy (given sufficient time) to find a seed producing a more accurate model. It also supports our claim that the hyperparameters don't make a big difference, as the highest resulting LoRA with the current seed is trained with quite a different configuration than the one we identified.
 
 To reproduce all results (with the above restrictions), execute the following steps. You can alternatively use the script `reproduce-all.sh` which will automatically run everything in sequence. Important: insert you HF_TOKEN and OPENAI_API_KEY at the top of the script and (even when not using the script) the project and organization id in `ChatGptAPI.py`! We also recommend checking in at least once a day to see if any errors occured.
 
