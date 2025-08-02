@@ -26,6 +26,7 @@ mkdir -p logs
 source .venv/bin/activate
 # initialize a git repo if not already in one
 git init
+git add .
 
 # Step 0: data generation
 python data_generation/gen_descriptive_data.py
