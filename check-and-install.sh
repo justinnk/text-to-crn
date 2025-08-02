@@ -78,6 +78,7 @@ if [ -d "loras/best_lora" ]; then
 else
   echo "Downloading LoRA (10GiB), this may take a while..."
   curl -LO https://zenodo.org/records/15145041/files/best_lora.zip
+  mkdir loras
   mv best_lora.zip loras/
   cd loras/ && unzip best_lora.zip && rm best_lora.zip
 fi
