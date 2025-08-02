@@ -20,7 +20,12 @@ get_time() {
 }
 
 mkdir -p reproduction
+mkdir -p loras
+mkdir -p results
+mkdir -p logs
 source .venv/bin/activate
+# initialize a git repo if not already in one
+git init
 
 # Step 0: data generation
 python data_generation/gen_descriptive_data.py

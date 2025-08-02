@@ -36,7 +36,8 @@ for idx, entry in enumerate(data["samples"]):
 num = len(bio_only["samples"])
 print(num, "bio samples.")
 
-os.mkdir(f"V11.0-{num}-bio")
+if not os.path.exists(f"V11.0-{num}-bio"):
+  os.mkdir(f"V11.0-{num}-bio")
 
 with open(f"V11.0-{num}-bio/test_wo_meta.json", "w") as file:
     json.dump(bio_only, file, indent=2)
