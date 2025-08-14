@@ -1,0 +1,46 @@
+--- tapi_orig.py	2025-08-12 17:23:39.882851320 +0200
++++ TransformersAPI.py	2025-08-12 17:24:20.326178095 +0200
+@@ -43,6 +43,7 @@
+ import bitsandbytes as bnb
+ import torch
+ 
++torch.set_float32_matmul_precision("high")
+ 
+ class TransformersAPI(Api):
+   """
+@@ -156,20 +157,21 @@
+       grammar_processor = [GrammarConstrainedLogitsProcessor(IncrementalGrammarConstraint(self._grammar_str, "root", self._tokenizer))]
+     else:
+       grammar_processor = []
+-    generated_ids = self._model.generate(
+-      input_tokens,
+-      # cache
+-      past_key_values=past_key_values,
+-      use_cache=True,
+-      # grammar
+-      logits_processor=grammar_processor,
+-      do_sample=True if temperature > 0 else False,
+-      # to silence warning...
+-      pad_token_id=self._tokenizer.pad_token_id,
+-      # generation parameters
+-      max_new_tokens=max_new_tokens,
+-      temperature=temperature,
+-    )
++    with torch.autocast(device_type="cuda", dtype=torch.float32):
++      generated_ids = self._model.generate(
++        input_tokens,
++        # cache
++        #past_key_values=past_key_values,
++        use_cache=False,
++        # grammar
++        logits_processor=grammar_processor,
++        do_sample=True if temperature > 0 else False,
++        # to silence warning...
++        pad_token_id=self._tokenizer.pad_token_id,
++        # generation parameters
++        max_new_tokens=max_new_tokens,
++        temperature=temperature,
++      )
+     decoded = self._tokenizer.batch_decode(generated_ids)
+     if "mistral" in self.model_name:
+       delim = "[/INST]"

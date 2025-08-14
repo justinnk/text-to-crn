@@ -58,7 +58,7 @@ fi
 if [[ $(df --output=avail / | tail -1) -gt $((600 * 1024 * 1024)) ]]; then
     echo "✅ More than 600GB of space available."
 else
-    echo "❌ You probably don't have enough space left on your device or the command we used to check does not work in your environment. Make sure you have sufficient space and comment out this check."
+  echo "❌ You may have insufficient disk space left on your device or the command we used to check does not work in your environment. Make sure you have sufficient space manually, comment out lines 58 to 63 in check-and-install.sh (this script), and run this script again."
     exit 1
 fi
 

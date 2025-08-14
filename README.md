@@ -17,7 +17,7 @@ Code artifacts for the paper "Using (Not-so) Large Language Models to Generate S
 git clone https://github.com/justinnk/text-to-crn.git
 cd text-to-crn
 ```
-2. Run the script `./check_and_install.sh` to check requirements and install the dependencies. After running this script, you may directly jump ahead to the reproduction if there were no errors.
+2. Run the script `./check_and_install.sh` to check requirements and install the dependencies. After running this script, if there were no errors, you may directly jump ahead to the reproduction.
 4. Consult the section "Reproduce Results" below (important!)
 3. Insert your Huggingface (see the first bullet in the section "Other Requirements") and OpenAI Keys at the top of `reproduce-all.sh` and the project id and organization id in `ChatGptAPI.py`. Run the script (`./reproduce-all.sh`) to reproduce all results. If you chose to manually run experiments and the results are now all present in the results folder, you may run `./reproduce-all.sh manual`. The figures and tables will then be placed in the folder `reproduction` and labelled like the figures and tables in the paper.
 
@@ -30,18 +30,20 @@ cd text-to-crn
 - Python; tested on version 3.10.12 (Ubuntu)
 - The dependencies listed in `requirements.txt`
   - can be installed automatically, see the next section
+  - although all versions are fixed for best reproducibility, other versions are likely to work as well
 
 ### Required Hardware
 
 - A CUDA-capable GPU with at least 24GB of VRAM and bf16 floating point compatibility
-- tested on RTX A5000 with 24GB VRAM with driver version `560.25.05` and CUDA version `12.6` and RTX3090Ti with driver version `570.133.07` and CUDA version `12.8`
-- Around 600GB of free hard drive space to store the tested LLMs and trained LoRAs
+- Tested on RTX A5000 with 24GB VRAM with driver version `560.25.05` and CUDA version `12.6` and RTX3090Ti with driver version `570.133.07` and CUDA version `12.8`
+  - Note: due to the use of float16, results for the tables 3-6 in the appendix may slightly differ when using a differnt GPU model. A patch (`precision_patch.txt`) is provided to mitigate this, but not guaranteed to work in every scenario (tested with the RTX 3090Ti).
+- Around 600GB of free hard drive space to store the tested LLMs, trained LoRAs, and results
 
 ### Other Requirements
 
 - A Huggingface Account
   - Access to the gated repositories of [Mistral 7B v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) and [Llama Instruct 8B v3.1](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
-    - when logged in, this can be achieved by just clicking the buttons at the top of the respective page
+    - when logged in, this can be achieved by just clicking the buttons at the top of the respective page; *for the Llama model, you need to fill in the form and await approval (typically very quick).*
     - you then need to create an access token [here](https://huggingface.co/settings/tokens)
     - this needs to be provided to the reproduction script
 - For reproduction only: Download our trained Mistral LoRA from the [related Zenodo archive](https://doi.org/10.5281/zenodo.15145040), unzip, and place it in the `loras` folder.
@@ -104,8 +106,8 @@ The following table provides an overview of the contents of the repository root.
 | `results/`                                                | Contains all the experimental results (once they are created).                                                                                 |
 | `reactions.gbnf`                                          | GBNF grammar used for constrained decoding.                                                                                                    |
 | `API.py`                                                  | Base class for LLM interfaces.                                                                                                                 |
-| `TransformersAPI.py`                                      | Interface with LLMs using the [`transformers`](https://github.com/huggingface/transformers) API by Huggingface.                                |              
-| `ChatGptAPI.py`                                           | Interface with OpenAI's LLMs using their API.                                                                                              |
+| `TransformersAPI.py`                                      | Interface with LLMs using the [`transformers`](https://github.com/huggingface/transformers) API by Huggingface.                                |
+| `ChatGptAPI.py`                                           | Interface with OpenAI's LLMs using their API.                                                                                                  |
 | `KinModGptAPI.py`                                         | Implements the KinModGpt[^1] few-shot prompting method and our adaption.                                                                       |
 | `IndraAPI.py`                                             | Interface with INDRA[^2] to translate models (not LLM-based).                                                                                  |
 | `chat.py`                                                 | Use one of the API's in a chat style.                                                                                                          |
@@ -115,11 +117,13 @@ The following table provides an overview of the contents of the repository root.
 | `logger.py`                                               | Helper function for better output logging.                                                                                                     |
 | `exp_*.py`                                                | Experiment specifications for few-shot scan, lora hyperparameter scan, temperature scan, KinModGpt comparison, and INDRA comparison.           |
 | `plot_*.py`                                               | Plot the results of the above experiments.                                                                                                     |
+| `extract_table.py`                                        | Transform the output log of the last reproduction step into more usable LaTeX table column format.                                             |
+| `precision_patch.txt`                                     | A patch that improves reproducibility when GPUs other than the RTX A5000 are used (due to different floating point implementations).           |
 | `find_best_lora.py`                                       | Helper script to show the best LoRA configuration identified in the hyperparameter scan.                                                       |
 | `.gitignore`                                              | Contains list of paths that should not be included in the Git version control.                                                                 |
 | `requirements.txt`                                        | Contains Python dependencies required by the Python scripts (can be instlled with `pip install -r requirements.txt`).                          |
 | `check-and-install.sh`                                    | Quick setup script to check requirements and install dependencies.                                                                             |
-| `reproduce-all.sh`                                        | Quick script to run all experiments in sequence.                                                                             |
+| `reproduce-all.sh`                                        | Quick script to run all experiments in sequence.                                                                                               |
 
 [^1]: Maeda, Kazuhiro, and Hiroyuki Kurata. "Automatic generation of sbml kinetic models from natural language texts using gpt." International Journal of Molecular Sciences 24.8 (2023): 7296. https://doi.org/10.3390/ijms24087296
 [^2]: https://github.com/sorgerlab/indra
@@ -134,9 +138,11 @@ This project is licensed under the MIT License contained in `LICENSE`, unless in
 
 These are the steps to reproduce the figures and claims in the paper.
 If you are not using the automated reproduction script, the following steps assume that you are inside the virtual environment created before with the installation guide above (using `source .venv/bin/activate`, if not already done).
-In any case, we recommend using `tmux` or something similar to start a persistent terminal session when working on a remote server (highly recommended).
+In any case, we highly recommend using `tmux` or something similar to start a persistent terminal session when working on a remote server.
 This ensures that experiments are not interrupted.
 However, almost all experiments are designed in a way that they are automatically continued (and not re-run) if reinvoked in case they were interrupted.
+Unless you want to redo an experiment, you never have to delete a result from the `results` folder.
+You can just run the respective command (or `./reproduce-all.sh`) again and it will continue where it was interrupted.
 
 Running all experiments may take from 5 to 10 days of computation time, depending on how fast your GPU is or whether you use multiple ones to run different experiments in parallel.
 When doing the latter, you can parallelize the two costliest steps 2 and 3 below (note: they typically depend on each other, but we also provide the LoRA trained in 2 to get you started with 3) and save up to 3 days in time.
@@ -156,31 +162,33 @@ To reproduce all results (with the above restrictions), execute the following st
 1. [running time: ~12h] Execute the few-shot scan to reproduce Figure 2 and Figure 5 (top) with `(OPENAI_API_KEY=<key> HF_TOKEN=<token>; unbuffer time python exp_few_shot_scan.py 2>&1) | tee -a "logs/log-few-shot-scan-$(date -Iminutes)".txt`, `python plot_few_shot_scan.py`. The plot for Figure 2 is then stored as `exp_few_shot_scan.pdf` and for Figure 5 (top) as `exp_few_shot_scan_embedded.pdf`.
 2. [running time: ~2d] Execute the LoRA hyperparameter scan `(HF_TOKEN=<token>; unbuffer time python exp_lora_scan.py 2>&1) | tee -a "logs/log-lora-scan-$(date -Iminutes)".txt`. Fint the best performing LoRA with `python find_best_lora.py`. The table can be found in `results/lora_scan/summary.csv`
 3. [running time: ~4d] Execute the temperature scan `(OPENAI_API_KEY=<key> HF_TOKEN=<token>; unbuffer time python exp_temp_scan.py 2>&1) | tee -a "logs/log-temp-scan-$(date -Iminutes)".txt`. Plot results with `python plot_temp_scan.py`, `python plot_temp_scan_chatgpt.py`, and `python plot_comparison_table.py`.
-4. [running time: ~1h] Conduct comparison to INDRA and KinModGpt using `(OPENAI_API_KEY=<key> HF_TOKEN=<token>; unbuffer time python exp_test_kinmodgpt.py 2>&1) | tee -a "logs/log-kinmodgpt-$(date -Iminutes)".txt` and `(unbuffer time python exp_compare_indra.py 2>&1) | tee -a "logs/log-indra-$(date -Iminutes)".txt`
-5. Run `./reproduce-all.sh manual` to generate the resulting figures and tables as in the paper. They will be placed in the `reproduction` folder.
+4. To prepare the next step, if you are not using an RTX A5000 GPU, run `patch -p1 TransformersAPI.py < precision_patch.txt`. As we used the `torch.float16` format for efficiency when doing our experiments, the results on other GPU models may differ to such an extent that sometimes different tokens are selected in the LLM inference. The patch is an attempt to bring the values closer together, but may still fail sometimes.
+5. [running time: ~1h] Conduct comparison to INDRA and KinModGpt using `(OPENAI_API_KEY=<key> HF_TOKEN=<token>; unbuffer time python exp_test_kinmodgpt.py 2>&1) | tee -a "logs/log-kinmodgpt-$(date -Iminutes)".txt` and `(unbuffer time python exp_compare_indra.py 2>&1) | tee -a "logs/log-indra-$(date -Iminutes)".txt`
+6. Undo the patch with `patch -R -p1 TransformersAPI.py < precision_patch.txt`.
+7. Run `./reproduce-all.sh manual` to generate the resulting figures and tables as in the paper. They will be placed in the `reproduction` folder.
 
 The claims of the paper are mostly the empirical evaluation data visible in the plots. The plots from the paper should now be placed in the root/`reproduction` folder. They are (in order of appearance in the paper):
 
-| Figure                | Path                                                                                                   |
-| ---:                  |:---                                                                                                    |
-| Figure 2              | `reproduction/figure2.pdf`                                                                             |
-| Figure 3              | `reproduction/figure3.pdf`                                                                             |
-| Figure 4              | `reproduction/figure4.pdf`                                                                             |
-| Table 1               | `reproduction/table1.txt`                                                                              |
-| Appendix C/Figure 5   | `reproduction/figure5_{top,bottom}.pdf`                                                                |
-| Appendix A            | Fragments are taken from `data/V11.0-1000/train_wo_meta.json` (you can use text search to find them).  |
-| Appendix B/Table 2    | `reproduction/table2.csv`, `table2_best_lora.txt`                                                      |
-| Appendix F/Tables 3-6 | `reproduction/tables_3_4_5.txt`                                                                        |
+| Figure                | Path                                                                                                                                                                                                                            |
+| ---:                  | :---                                                                                                                                                                                                                            |
+| Figure 2              | `reproduction/figure2.pdf`                                                                                                                                                                                                      |
+| Figure 3              | `reproduction/figure3.pdf`                                                                                                                                                                                                      |
+| Figure 4              | `reproduction/figure4.pdf`                                                                                                                                                                                                      |
+| Table 1               | `reproduction/table1.txt`                                                                                                                                                                                                       |
+| Appendix C/Figure 5   | `reproduction/figure5_{top,bottom}.pdf`                                                                                                                                                                                         |
+| Appendix A            | Fragments are taken from `data/V11.0-1000/train_wo_meta.json` (you can use text search to find them).                                                                                                                           |
+| Appendix B/Table 2    | `reproduction/table2.csv`, `table2_best_lora.txt`                                                                                                                                                                               |
+| Appendix F/Tables 3-6 | `reproduction/tables_3_4_5_6.txt` (for raw log) or `reproduction/tables_3_4_5_6.tex` (for LaTeX table column format). Also note that reactions may be reordered or renumbered wrt. the output you get (especially in Table 6).  |
 
 Other claims from the paper text:
 
-| Claim                                                                                                                                                                                           | Where to find the evidence                                                                                 |
-| ---:                                                                                                                                                                                            | :---                                                                                                       |
-| "Embedding prompts resulted in similar, but slightly worse performance" (Section 5.5)"                                                                                                          | `reproduction/figure5_{top,bottom}.pdf` (specifically looking at temperature 0)                            |
-| "It is evident from the results that there is no systematic way in which the hyperparameters influenced the accuracy. All combinations result in an accuracy between 70% and 80%" (Section 5.6) | `reproduction/table2.csv`, `reproduction/table2_best_lora.txt`                                             |
-| KinModGpt accuracy on our data is 95.2% (Section 5.9)                                                                                                                                           | `results/kinmodgpt_scan/our_examples/summary.json`                                                         |
-| Results regarding INDRA (Section 5.9)                                                                                                                                                           | `results/indra/bio-examples-test`                                                                          |
-| "In only around 42% percent of cases did the [INDRA] tool yield a non-empty model." (Section 5.9)                                                                                               | `results/indra/bio-examples-test/seed-1234-temperature_0/metadata.json` (62 - (value of CRITICAL_FAIL))/62 |
+| Claim                                                                                                                                                                                           | Where to find the evidence                                                                                                                                                              |
+| ---:                                                                                                                                                                                            | :---                                                                                                                                                                                    |
+| "Embedding prompts resulted in similar, but slightly worse performance" (Section 5.5)"                                                                                                          | `reproduction/figure5_{top,bottom}.pdf` (specifically looking at temperature 0)                                                                                                         |
+| "It is evident from the results that there is no systematic way in which the hyperparameters influenced the accuracy. All combinations result in an accuracy between 70% and 80%" (Section 5.6) | `reproduction/table2.csv`, `reproduction/table2_best_lora.txt`                                                                                                                          |
+| KinModGpt accuracy on our data is 95.2% (Section 5.9)                                                                                                                                           | `results/kinmodgpt_scan/our_examples/summary.json`; Note that the actual value obtained might be slightly different as the OpenAI API cannot be used in a fully deterministic fashion. |
+| Results regarding INDRA (Section 5.9)                                                                                                                                                           | `results/indra/bio-examples-test`                                                                                                                                                       |
+| "In only around 42% percent of cases did the [INDRA] tool yield a non-empty model." (Section 5.9)                                                                                               | `results/indra/bio-examples-test/seed-1234-temperature_0/metadata.json` (62 - (value of CRITICAL_FAIL))/62                                                                              |
 
 Structure of the `results` folder, when all experimental data was reproduced:
 

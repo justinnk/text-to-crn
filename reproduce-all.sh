@@ -70,7 +70,13 @@ cp exp_temp_scan_extra.pdf reproduction/figure5_bottom.pdf
 if [ "$1" = "manual" ]; then
   echo "skipping experiment, just generating output."
 else
+  # apply patch to avoid differences between GPU architectures (even if not necessary)
+  # apply only here as otherwise it drastically increases execution time
+  patch -p1 TransformersAPI.py < precision_patch.txt
   (unbuffer time python exp_test_kinmodgpt.py 2>&1) | tee -a "logs/log-kinmodgpt-$(get_time)".txt
+  patch -R -p1 TransformersAPI.py < precision_patch.txt
   (unbuffer time python exp_compare_indra.py 2>&1) | tee -a "logs/log-indra-$(get_time)".txt
 fi
 cp results/kinmodgpt_scan/their_examples/log.txt reproduction/tables_3_4_5_6.txt
+python extract_table.py
+
