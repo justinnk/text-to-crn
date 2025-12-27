@@ -224,5 +224,6 @@ Generally, the individual results in the above folders have the following form:
 ```
 Justin Noah Kreikemeyer, Miłosz Jankowski, Pia Wilsdorf, and Adelinde M. Uhrmacher. 2025.
 Using (Not-so) Large Language Models to Generate Simulation Models in a Formal DSL: A Study on Reaction Networks.
-ACM Trans. Model. Comput. Simul. Just Accepted (May 2025). https://doi.org/10.1145/3733719
+ACM Trans. Model. Comput. Simul. 35, 4, Article 31 (October 2025), 27 pages.
+https://doi.org/10.1145/3733719
 ```
